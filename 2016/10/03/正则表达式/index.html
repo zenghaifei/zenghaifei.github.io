@@ -98,7 +98,7 @@
 确切的讲，它是用来对字符串进行模式匹配的一个语言工具，目前在各个编程语言以及编辑器中均有广泛的支持（不同的处理引擎语法与功能实现上会略有差异）；
 
 对我们程序员而言，你既可以在编辑器中用它来快速的进行文本的查找、替换，也可以在程序中利用它进行简洁高效的字符串校验编辑，熟悉后，你一定会为它所带来的简洁优雅所惊讶的！废话不">
-<meta property="og:updated_time" content="2016-10-03T15:51:22.000Z">
+<meta property="og:updated_time" content="2016-10-04T02:26:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="简介在字符串的处理中，正则表达式是绕不开的话题，它就是为字符串的处理而生的。
@@ -305,12 +305,12 @@
       
 
       
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>在字符串的处理中，正则表达式是绕不开的话题，它就是为字符串的处理而生的。</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在字符串的处理中，正则表达式是绕不开的话题，它就是为字符串的处理而生的。</p>
 <blockquote>
 <p>确切的讲，它是用来对字符串进行模式匹配的一个语言工具，目前在各个编程语言以及编辑器中均有广泛的支持（不同的处理引擎语法与功能实现上会略有差异）；</p>
 </blockquote>
 <p>对我们程序员而言，你既可以在编辑器中用它来快速的进行文本的查找、替换，也可以在程序中利用它进行简洁高效的字符串校验编辑，熟悉后，你一定会为它所带来的简洁优雅所惊讶的！废话不多说了，下面就简要介绍一下其语法与注意事项。</p>
-<h3 id="常用语法"><a href="#常用语法" class="headerlink" title="常用语法"></a>常用语法</h3><h4 id="一、常用匹配符"><a href="#一、常用匹配符" class="headerlink" title="一、常用匹配符"></a>一、常用匹配符</h4><blockquote>
+<h2 id="常用语法"><a href="#常用语法" class="headerlink" title="常用语法"></a>常用语法</h2><h3 id="一、常用匹配符"><a href="#一、常用匹配符" class="headerlink" title="一、常用匹配符"></a>一、常用匹配符</h3><blockquote>
 <ul>
 <li>匹配单个数字: \d  (d对应单词digit)</li>
 <li>匹配单个常见字符: \w (w对应单词‘word’，含：a-z,A-Z,0-9,_)</li>
@@ -319,41 +319,41 @@
 <li>其他常用匹配符（大写匹配符通常代表小写匹配符的反面含义），如：\D、\S 分别匹配单个非数字、非空白字符</li>
 </ul>
 </blockquote>
-<h4 id="二、基本匹配模型"><a href="#二、基本匹配模型" class="headerlink" title="二、基本匹配模型"></a>二、基本匹配模型</h4><h5 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h5><h6 id="1、枚举选择"><a href="#1、枚举选择" class="headerlink" title="1、枚举选择"></a>1、枚举选择</h6><blockquote>
+<h3 id="二、基本匹配模型"><a href="#二、基本匹配模型" class="headerlink" title="二、基本匹配模型"></a>二、基本匹配模型</h3><h4 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h4><h5 id="1、枚举选择"><a href="#1、枚举选择" class="headerlink" title="1、枚举选择"></a>1、枚举选择</h5><blockquote>
 <ul>
 <li>[abc12]  选择单个字符：代表该字符可以是a、b、c、1、2中的任意一个</li>
 <li>(abc|efg)  选择一个字符串：代表该字符串要么是‘abc’要么是’efg’</li>
 </ul>
 </blockquote>
-<h6 id="2、范围选择"><a href="#2、范围选择" class="headerlink" title="2、范围选择"></a>2、范围选择</h6><blockquote>
+<h5 id="2、范围选择"><a href="#2、范围选择" class="headerlink" title="2、范围选择"></a>2、范围选择</h5><blockquote>
 <ul>
 <li>在…范围：如[1-9]代表1-9的一个数字，[a-z]代表a-z的一个英文小写数字</li>
 <li>不在…范围：如[^0-9]代表一个非数字</li>
 </ul>
 </blockquote>
-<h5 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h5><blockquote>
+<h4 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h4><blockquote>
 <ul>
 <li>* 代表该符号前的字符或字符模型可以往后重复0到无数次, 如[0-9]* 可以匹配任何长度的数字，包括长度为0（即不匹配）。</li>
 <li>+ 代表该符号前的字符或字符模型可以往后重复1到无数次，如[0-9]+ 可以匹配1位以上长度的数字，不能1位都不匹配。</li>
 <li>? 代表该符号前的字符或字符模型可以重复0次或1次， 如[0-9]?9可以匹配19，也可以匹配9。</li>
 </ul>
 </blockquote>
-<h5 id="标记字符串起始结尾"><a href="#标记字符串起始结尾" class="headerlink" title="标记字符串起始结尾"></a>标记字符串起始结尾</h5><blockquote>
+<h4 id="标记字符串起始结尾"><a href="#标记字符串起始结尾" class="headerlink" title="标记字符串起始结尾"></a>标记字符串起始结尾</h4><blockquote>
 <ul>
 <li>^ 表示一行的开始</li>
 <li>$ 表示一行的结尾</li>
 </ul>
 </blockquote>
-<h4 id="三、字符组捕获"><a href="#三、字符组捕获" class="headerlink" title="三、字符组捕获"></a>三、字符组捕获</h4><p>除了匹配字符串是否符合指定的模型之外，我们也希望能提取出字符串中一些有价值的信息以备后续使用，这时正则表达式的字符组捕获功能便非常有用了。基本语法为：分别将匹配串中需要捕获的各个域用括号括起来，需要调用各个捕获域的值时只需用$1、$2、$3…分别对应起括号从左往右的1、2、3…的顺序即可。</p>
+<h3 id="三、字符组捕获"><a href="#三、字符组捕获" class="headerlink" title="三、字符组捕获"></a>三、字符组捕获</h3><p>除了匹配字符串是否符合指定的模型之外，我们也希望能提取出字符串中一些有价值的信息以备后续使用，这时正则表达式的字符组捕获功能便非常有用了。基本语法为：分别将匹配串中需要捕获的各个域用括号括起来，需要调用各个捕获域的值时只需用$1、$2、$3…分别对应起括号从左往右的1、2、3…的顺序即可。</p>
 <blockquote>
 <p>如：时间字符串2016-10-02中隐含了年、月、日的信息，我们可以使用正则表达式(\d{4})-(\d{2})-(\d{2})及$1、$2、$3将其中各项的值给提取出来（$1、$2、$3分别代表前面表达式中第1、2、3个括号中匹配的值）。</p>
 </blockquote>
 <p>对于不需要捕获但又需要使用括号的情况可在括号内加上（？：）标注该括号为非捕获域。</p>
-<h4 id="四、需注意特性"><a href="#四、需注意特性" class="headerlink" title="四、需注意特性"></a>四、需注意特性</h4><h5 id="贪婪匹配"><a href="#贪婪匹配" class="headerlink" title="贪婪匹配"></a>贪婪匹配</h5><p>对于重复标识符* 、+、？匹配引擎默认总是会试图优先以尽量多的位数进行匹配，多位数匹配不上才会尝试用更小的位数匹配，如需要启用懒惰模式（即以尽量少的位数进行匹配）则需要在这些标识符后再加上？。</p>
+<h3 id="四、需注意特性"><a href="#四、需注意特性" class="headerlink" title="四、需注意特性"></a>四、需注意特性</h3><h4 id="贪婪匹配"><a href="#贪婪匹配" class="headerlink" title="贪婪匹配"></a>贪婪匹配</h4><p>对于重复标识符* 、+、？匹配引擎默认总是会试图优先以尽量多的位数进行匹配，多位数匹配不上才会尝试用更小的位数匹配，如需要启用懒惰模式（即以尽量少的位数进行匹配）则需要在这些标识符后再加上？。</p>
 <blockquote>
 <p>如：用正则表达式&lt;.+&gt;匹配字符串“This is a &lt; EM&gt;first&lt; /EM&gt; test”，匹配的第一个结果将为：“ &lt; EM>first&lt; /EM&gt;”而不是&lt; EM&gt;，因匹配引擎默认优先进行贪婪匹配，将表达式改为&lt;.+?&gt;后改为惰性匹配，此时的第一个匹配结果才是”&lt; EM&gt;”</p>
 </blockquote>
-<h5 id="最左匹配"><a href="#最左匹配" class="headerlink" title="最左匹配"></a>最左匹配</h5><blockquote>
+<h4 id="最左匹配"><a href="#最左匹配" class="headerlink" title="最左匹配"></a>最左匹配</h4><blockquote>
 <p>字符串从左向右找到第一个匹配项便停止</p>
 </blockquote>
 
@@ -579,7 +579,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用语法"><span class="nav-number">2.</span> <span class="nav-text">常用语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、常用匹配符"><span class="nav-number">2.1.</span> <span class="nav-text">一、常用匹配符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、基本匹配模型"><span class="nav-number">2.2.</span> <span class="nav-text">二、基本匹配模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#选择"><span class="nav-number">2.2.1.</span> <span class="nav-text">选择</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1、枚举选择"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">1、枚举选择</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2、范围选择"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">2、范围选择</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#重复"><span class="nav-number">2.2.2.</span> <span class="nav-text">重复</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#标记字符串起始结尾"><span class="nav-number">2.2.3.</span> <span class="nav-text">标记字符串起始结尾</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、字符组捕获"><span class="nav-number">2.3.</span> <span class="nav-text">三、字符组捕获</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、需注意特性"><span class="nav-number">2.4.</span> <span class="nav-text">四、需注意特性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#贪婪匹配"><span class="nav-number">2.4.1.</span> <span class="nav-text">贪婪匹配</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最左匹配"><span class="nav-number">2.4.2.</span> <span class="nav-text">最左匹配</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用语法"><span class="nav-number">2.</span> <span class="nav-text">常用语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、常用匹配符"><span class="nav-number">2.1.</span> <span class="nav-text">一、常用匹配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、基本匹配模型"><span class="nav-number">2.2.</span> <span class="nav-text">二、基本匹配模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选择"><span class="nav-number">2.2.1.</span> <span class="nav-text">选择</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、枚举选择"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">1、枚举选择</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、范围选择"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">2、范围选择</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重复"><span class="nav-number">2.2.2.</span> <span class="nav-text">重复</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标记字符串起始结尾"><span class="nav-number">2.2.3.</span> <span class="nav-text">标记字符串起始结尾</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、字符组捕获"><span class="nav-number">2.3.</span> <span class="nav-text">三、字符组捕获</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、需注意特性"><span class="nav-number">2.4.</span> <span class="nav-text">四、需注意特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#贪婪匹配"><span class="nav-number">2.4.1.</span> <span class="nav-text">贪婪匹配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最左匹配"><span class="nav-number">2.4.2.</span> <span class="nav-text">最左匹配</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
