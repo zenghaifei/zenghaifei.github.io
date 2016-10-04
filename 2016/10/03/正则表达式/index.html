@@ -1,0 +1,741 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="基本技能," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="简介在字符串的处理中，正则表达式是绕不开的话题，它就是为字符串的处理而生的。
+
+确切的讲，它是用来对字符串进行模式匹配的一个语言工具，目前在各个编程语言以及编辑器中均有广泛的支持（不同的处理引擎语法与功能实现上会略有差异）；
+
+对我们程序员而言，你既可以在编辑器中用它来快速的进行文本的查找、替换，也可以在程序中利用它进行简洁高效的字符串校验编辑，熟悉后，你一定会为它所带来的简洁优雅所惊讶的！废话不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="https://zenghaifei.github.io/2016/10/03/正则表达式/index.html">
+<meta property="og:site_name" content="悠河">
+<meta property="og:description" content="简介在字符串的处理中，正则表达式是绕不开的话题，它就是为字符串的处理而生的。
+
+确切的讲，它是用来对字符串进行模式匹配的一个语言工具，目前在各个编程语言以及编辑器中均有广泛的支持（不同的处理引擎语法与功能实现上会略有差异）；
+
+对我们程序员而言，你既可以在编辑器中用它来快速的进行文本的查找、替换，也可以在程序中利用它进行简洁高效的字符串校验编辑，熟悉后，你一定会为它所带来的简洁优雅所惊讶的！废话不">
+<meta property="og:updated_time" content="2016-10-03T15:51:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:description" content="简介在字符串的处理中，正则表达式是绕不开的话题，它就是为字符串的处理而生的。
+
+确切的讲，它是用来对字符串进行模式匹配的一个语言工具，目前在各个编程语言以及编辑器中均有广泛的支持（不同的处理引擎语法与功能实现上会略有差异）；
+
+对我们程序员而言，你既可以在编辑器中用它来快速的进行文本的查找、替换，也可以在程序中利用它进行简洁高效的字符串校验编辑，熟悉后，你一定会为它所带来的简洁优雅所惊讶的！废话不">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6311824304266806000,
+      author: 'Colin'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://zenghaifei.github.io/2016/10/03/正则表达式/"/>
+
+  <title> 正则表达式 | 悠河 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">悠河</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">自由之路</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                正则表达式
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-03T20:25:25+08:00" content="2016-10-03">
+              2016-10-03
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/03/正则表达式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/03/正则表达式/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>在字符串的处理中，正则表达式是绕不开的话题，它就是为字符串的处理而生的。</p>
+<blockquote>
+<p>确切的讲，它是用来对字符串进行模式匹配的一个语言工具，目前在各个编程语言以及编辑器中均有广泛的支持（不同的处理引擎语法与功能实现上会略有差异）；</p>
+</blockquote>
+<p>对我们程序员而言，你既可以在编辑器中用它来快速的进行文本的查找、替换，也可以在程序中利用它进行简洁高效的字符串校验编辑，熟悉后，你一定会为它所带来的简洁优雅所惊讶的！废话不多说了，下面就简要介绍一下其语法与注意事项。</p>
+<h3 id="常用语法"><a href="#常用语法" class="headerlink" title="常用语法"></a>常用语法</h3><h4 id="一、常用匹配符"><a href="#一、常用匹配符" class="headerlink" title="一、常用匹配符"></a>一、常用匹配符</h4><blockquote>
+<ul>
+<li>匹配单个数字: \d  (d对应单词digit)</li>
+<li>匹配单个常见字符: \w (w对应单词‘word’，含：a-z,A-Z,0-9,_)</li>
+<li>匹配单个任意字符：.</li>
+<li>匹配空白字符：\s（该空白字符可以是一个space、tab（\t）或者new line （\n））</li>
+<li>其他常用匹配符（大写匹配符通常代表小写匹配符的反面含义），如：\D、\S 分别匹配单个非数字、非空白字符</li>
+</ul>
+</blockquote>
+<h4 id="二、基本匹配模型"><a href="#二、基本匹配模型" class="headerlink" title="二、基本匹配模型"></a>二、基本匹配模型</h4><h5 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h5><h6 id="1、枚举选择"><a href="#1、枚举选择" class="headerlink" title="1、枚举选择"></a>1、枚举选择</h6><blockquote>
+<ul>
+<li>[abc12]  选择单个字符：代表该字符可以是a、b、c、1、2中的任意一个</li>
+<li>(abc|efg)  选择一个字符串：代表该字符串要么是‘abc’要么是’efg’</li>
+</ul>
+</blockquote>
+<h6 id="2、范围选择"><a href="#2、范围选择" class="headerlink" title="2、范围选择"></a>2、范围选择</h6><blockquote>
+<ul>
+<li>在…范围：如[1-9]代表1-9的一个数字，[a-z]代表a-z的一个英文小写数字</li>
+<li>不在…范围：如[^0-9]代表一个非数字</li>
+</ul>
+</blockquote>
+<h5 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h5><blockquote>
+<ul>
+<li>* 代表该符号前的字符或字符模型可以往后重复0到无数次, 如[0-9]* 可以匹配任何长度的数字，包括长度为0（即不匹配）。</li>
+<li>+ 代表该符号前的字符或字符模型可以往后重复1到无数次，如[0-9]+ 可以匹配1位以上长度的数字，不能1位都不匹配。</li>
+<li>? 代表该符号前的字符或字符模型可以重复0次或1次， 如[0-9]?9可以匹配19，也可以匹配9。</li>
+</ul>
+</blockquote>
+<h5 id="标记字符串起始结尾"><a href="#标记字符串起始结尾" class="headerlink" title="标记字符串起始结尾"></a>标记字符串起始结尾</h5><blockquote>
+<ul>
+<li>^ 表示一行的开始</li>
+<li>$ 表示一行的结尾</li>
+</ul>
+</blockquote>
+<h4 id="三、字符组捕获"><a href="#三、字符组捕获" class="headerlink" title="三、字符组捕获"></a>三、字符组捕获</h4><p>除了匹配字符串是否符合指定的模型之外，我们也希望能提取出字符串中一些有价值的信息以备后续使用，这时正则表达式的字符组捕获功能便非常有用了。基本语法为：分别将匹配串中需要捕获的各个域用括号括起来，需要调用各个捕获域的值时只需用$1、$2、$3…分别对应起括号从左往右的1、2、3…的顺序即可。</p>
+<blockquote>
+<p>如：时间字符串2016-10-02中隐含了年、月、日的信息，我们可以使用正则表达式(\d{4})-(\d{2})-(\d{2})及$1、$2、$3将其中各项的值给提取出来（$1、$2、$3分别代表前面表达式中第1、2、3个括号中匹配的值）。</p>
+</blockquote>
+<p>对于不需要捕获但又需要使用括号的情况可在括号内加上（？：）标注该括号为非捕获域。</p>
+<h4 id="四、需注意特性"><a href="#四、需注意特性" class="headerlink" title="四、需注意特性"></a>四、需注意特性</h4><h5 id="贪婪匹配"><a href="#贪婪匹配" class="headerlink" title="贪婪匹配"></a>贪婪匹配</h5><p>对于重复标识符* 、+、？匹配引擎默认总是会试图优先以尽量多的位数进行匹配，多位数匹配不上才会尝试用更小的位数匹配，如需要启用懒惰模式（即以尽量少的位数进行匹配）则需要在这些标识符后再加上？。</p>
+<blockquote>
+<p>如：用正则表达式&lt;.+&gt;匹配字符串“This is a &lt; EM&gt;first&lt; /EM&gt; test”，匹配的第一个结果将为：“ &lt; EM>first&lt; /EM&gt;”而不是&lt; EM&gt;，因匹配引擎默认优先进行贪婪匹配，将表达式改为&lt;.+?&gt;后改为惰性匹配，此时的第一个匹配结果才是”&lt; EM&gt;”</p>
+</blockquote>
+<h5 id="最左匹配"><a href="#最左匹配" class="headerlink" title="最左匹配"></a>最左匹配</h5><blockquote>
+<p>字符串从左向右找到第一个匹配项便停止</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/基本技能/" rel="tag">#基本技能</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/21/所谓的“兴趣”只会让你停滞不前/" rel="next" title="所谓的“兴趣”只会让你停滞不前">
+                <i class="fa fa-chevron-left"></i> 所谓的“兴趣”只会让你停滞不前
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/10/03/正则表达式/"
+     data-title="正则表达式"
+     data-content=""
+     data-url="https://zenghaifei.github.io/2016/10/03/正则表达式/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/03/正则表达式/"
+           data-title="正则表达式" data-url="https://zenghaifei.github.io/2016/10/03/正则表达式/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Colin Zeng" />
+          <p class="site-author-name" itemprop="name">Colin Zeng</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zenghaifei" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/zenghaifei" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-zhihu"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/fhope/profile" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/hai_fei/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-douban"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaolai.li/" title="lixiaolai" target="_blank">lixiaolai</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://smalltalk.xdite.net/" title="xdite" target="_blank">xdite</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用语法"><span class="nav-number">2.</span> <span class="nav-text">常用语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、常用匹配符"><span class="nav-number">2.1.</span> <span class="nav-text">一、常用匹配符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、基本匹配模型"><span class="nav-number">2.2.</span> <span class="nav-text">二、基本匹配模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#选择"><span class="nav-number">2.2.1.</span> <span class="nav-text">选择</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1、枚举选择"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">1、枚举选择</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2、范围选择"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">2、范围选择</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#重复"><span class="nav-number">2.2.2.</span> <span class="nav-text">重复</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#标记字符串起始结尾"><span class="nav-number">2.2.3.</span> <span class="nav-text">标记字符串起始结尾</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、字符组捕获"><span class="nav-number">2.3.</span> <span class="nav-text">三、字符组捕获</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、需注意特性"><span class="nav-number">2.4.</span> <span class="nav-text">四、需注意特性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#贪婪匹配"><span class="nav-number">2.4.1.</span> <span class="nav-text">贪婪匹配</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最左匹配"><span class="nav-number">2.4.2.</span> <span class="nav-text">最左匹配</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Colin Zeng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zenghaifei"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
