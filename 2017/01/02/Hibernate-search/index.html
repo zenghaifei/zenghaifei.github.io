@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="基本技能," />
+  <meta name="keywords" content="搜索," />
 
 
 
@@ -84,28 +84,16 @@
 
 
 
-<meta name="description" content="简介在字符串的处理中，正则表达式是绕不开的话题，它就是为字符串的处理而生的。
-
-确切的讲，它是用来对字符串进行模式匹配的一个语言工具，目前在各个编程语言以及编辑器中均有广泛的支持（不同的处理引擎语法与功能实现上会略有差异）；
-
-对我们程序员而言，你既可以在编辑器中用它来快速的进行文本的查找、替换，也可以在程序中利用它进行简洁高效的字符串校验编辑，熟悉后，你一定会为它所带来的简洁优雅所惊讶的！废话不">
+<meta name="description" content="简介搜索在快速、高效的获取信息上拥有至关重要的作用，目前已经是各个应用不可或缺的基础设施之一。由于搜索的非精准性决定了搜索的数据量常常是巨大的，如果使用一般的数据库查询技术响应速度会是一个巨大的问题，因而提供一个快速高效的搜索引擎往往是非常有必要的。全文搜索引擎是目前广泛应用的主流搜索引擎，Google、百度使用的就是此类搜索引擎，在java中Lucene是最出名的一个开源全文搜索引擎，当前最为流">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则表达式">
-<meta property="og:url" content="https://zenghaifei.github.io/2016/10/03/正则表达式/index.html">
+<meta property="og:title" content="Hibernate search">
+<meta property="og:url" content="https://zenghaifei.github.io/2017/01/02/Hibernate-search/index.html">
 <meta property="og:site_name" content="悠河">
-<meta property="og:description" content="简介在字符串的处理中，正则表达式是绕不开的话题，它就是为字符串的处理而生的。
-
-确切的讲，它是用来对字符串进行模式匹配的一个语言工具，目前在各个编程语言以及编辑器中均有广泛的支持（不同的处理引擎语法与功能实现上会略有差异）；
-
-对我们程序员而言，你既可以在编辑器中用它来快速的进行文本的查找、替换，也可以在程序中利用它进行简洁高效的字符串校验编辑，熟悉后，你一定会为它所带来的简洁优雅所惊讶的！废话不">
-<meta property="og:updated_time" content="2016-10-04T02:26:59.000Z">
+<meta property="og:description" content="简介搜索在快速、高效的获取信息上拥有至关重要的作用，目前已经是各个应用不可或缺的基础设施之一。由于搜索的非精准性决定了搜索的数据量常常是巨大的，如果使用一般的数据库查询技术响应速度会是一个巨大的问题，因而提供一个快速高效的搜索引擎往往是非常有必要的。全文搜索引擎是目前广泛应用的主流搜索引擎，Google、百度使用的就是此类搜索引擎，在java中Lucene是最出名的一个开源全文搜索引擎，当前最为流">
+<meta property="og:updated_time" content="2017-01-03T00:37:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="正则表达式">
-<meta name="twitter:description" content="简介在字符串的处理中，正则表达式是绕不开的话题，它就是为字符串的处理而生的。
-
-确切的讲，它是用来对字符串进行模式匹配的一个语言工具，目前在各个编程语言以及编辑器中均有广泛的支持（不同的处理引擎语法与功能实现上会略有差异）；
-
-对我们程序员而言，你既可以在编辑器中用它来快速的进行文本的查找、替换，也可以在程序中利用它进行简洁高效的字符串校验编辑，熟悉后，你一定会为它所带来的简洁优雅所惊讶的！废话不">
+<meta name="twitter:title" content="Hibernate search">
+<meta name="twitter:description" content="简介搜索在快速、高效的获取信息上拥有至关重要的作用，目前已经是各个应用不可或缺的基础设施之一。由于搜索的非精准性决定了搜索的数据量常常是巨大的，如果使用一般的数据库查询技术响应速度会是一个巨大的问题，因而提供一个快速高效的搜索引擎往往是非常有必要的。全文搜索引擎是目前广泛应用的主流搜索引擎，Google、百度使用的就是此类搜索引擎，在java中Lucene是最出名的一个开源全文搜索引擎，当前最为流">
 
 
 
@@ -126,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="https://zenghaifei.github.io/2016/10/03/正则表达式/"/>
+  <link rel="canonical" href="https://zenghaifei.github.io/2017/01/02/Hibernate-search/"/>
 
-  <title> 正则表达式 | 悠河 </title>
+  <title> Hibernate search | 悠河 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -258,7 +246,7 @@
             
             
               
-                正则表达式
+                Hibernate search
               
             
           </h1>
@@ -270,8 +258,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-03T20:25:25+08:00" content="2016-10-03">
-              2016-10-03
+            <time itemprop="dateCreated" datetime="2017-01-02T22:15:20+08:00" content="2017-01-02">
+              2017-01-02
             </time>
           </span>
 
@@ -281,8 +269,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/03/正则表达式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/03/正则表达式/" itemprop="commentsCount"></span>
+                <a href="/2017/01/02/Hibernate-search/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/02/Hibernate-search/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -305,57 +293,47 @@
       
 
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在字符串的处理中，正则表达式是绕不开的话题，它就是为字符串的处理而生的。</p>
-<blockquote>
-<p>确切的讲，它是用来对字符串进行模式匹配的一个语言工具，目前在各个编程语言以及编辑器中均有广泛的支持（不同的处理引擎语法与功能实现上会略有差异）；</p>
-</blockquote>
-<p>对我们程序员而言，你既可以在编辑器中用它来快速的进行文本的查找、替换，也可以在程序中利用它进行简洁高效的字符串校验编辑，熟悉后，你一定会为它所带来的简洁优雅所惊讶的！废话不多说了，下面就简要介绍一下其语法与注意事项。</p>
-<h2 id="常用语法"><a href="#常用语法" class="headerlink" title="常用语法"></a>常用语法</h2><h3 id="一、常用匹配符"><a href="#一、常用匹配符" class="headerlink" title="一、常用匹配符"></a>一、常用匹配符</h3><blockquote>
-<ul>
-<li>匹配单个数字: \d  (d对应单词digit)</li>
-<li>匹配单个常见字符: \w (w对应单词‘word’，含：a-z,A-Z,0-9,_)</li>
-<li>匹配单个任意字符：.</li>
-<li>匹配空白字符：\s（该空白字符可以是一个space、tab（\t）或者new line （\n））</li>
-<li>其他常用匹配符（大写匹配符通常代表小写匹配符的反面含义），如：\D、\S 分别匹配单个非数字、非空白字符</li>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>搜索在快速、高效的获取信息上拥有至关重要的作用，目前已经是各个应用不可或缺的基础设施之一。由于搜索的非精准性决定了搜索的数据量常常是巨大的，如果使用一般的数据库查询技术响应速度会是一个巨大的问题，因而提供一个快速高效的搜索引擎往往是非常有必要的。全文搜索引擎是目前广泛应用的主流搜索引擎，Google、百度使用的就是此类搜索引擎，在java中Lucene是最出名的一个开源全文搜索引擎，当前最为流行几个开源搜索集成框架——Elasticsearch、Solr、Hibernate search等的底层搜索技术均是基于Lucene。</p>
+<p><strong>在已经使用了Hibernate作为数据持久层框架的项目中，整合Hibernate search作为全文搜索工具是非常方便的，简单来说，Hibernate search提供了非常简洁、易用的调用方法，在需要模糊查询（或匹配度查询）的场景中可以考虑使用该工具。</strong></p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
+<li>提供了模糊匹配的功能（不同于sql中的“like%”，模糊匹配可以允许错别字）。</li>
+<li>快速（由于匹配的计算工作很大程度上分摊到了建索引时，真正查询时的便可以大大节省计算压力于时间，因而大大加快了响应的速度，也平滑了服务器的计算压力）。</li>
+<li>高效（搜索结果默认按匹配度排序返回，保证了越相关的结果排在越前）。</li>
+<li>灵活（查询语句可以在代码中进行各种混搭组合，因而可以便捷的实现很多复杂的查询效果）。</li>
+<li>减轻数据库负载（由于Lucene在硬盘上会建立索引文件，使用projection可以只查索引文件而不需要访问数据库）。</li>
+</ol>
+<h2 id="使用步骤和语法-以JPA为案例"><a href="#使用步骤和语法-以JPA为案例" class="headerlink" title="使用步骤和语法(以JPA为案例)"></a>使用步骤和语法(以JPA为案例)</h2><h3 id="一、添加依赖包"><a href="#一、添加依赖包" class="headerlink" title="一、添加依赖包"></a>一、添加依赖包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">   &lt;groupId&gt;org.hibernate&lt;/groupId&gt;</div><div class="line">   &lt;artifactId&gt;hibernate-search-orm&lt;/artifactId&gt;</div><div class="line">   &lt;version&gt;5.5.5.Final&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div><div class="line">&lt;!--if using jpa, add:--&gt;</div><div class="line">&lt;dependency&gt;  </div><div class="line">   &lt;groupId&gt;org.hibernate&lt;/groupId&gt;</div><div class="line">   &lt;artifactId&gt;hibernate-entitymanager&lt;/artifactId&gt;</div><div class="line">   &lt;version&gt;5.0.11.Final&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+<h3 id="二、参数配置"><a href="#二、参数配置" class="headerlink" title="二、参数配置"></a>二、参数配置</h3><h4 id="配置hiberna-search"><a href="#配置hiberna-search" class="headerlink" title="配置hiberna search"></a>配置hiberna search</h4><p>在spring boot框架中，直接在<code>src/main/resources/application.properties</code>文件中添加如下配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># Specify the DirectoryProvider to use (the Lucene Directory)</div><div class="line">spring.jpa.properties.hibernate.search.default.directory_provider = filesystem</div><div class="line"># Using the filesystem DirectoryProvider you also have to specify the default</div><div class="line"># base directory for all indexes (make sure that the application have write</div><div class="line"># permissions on such directory)</div><div class="line">spring.jpa.properties.hibernate.search.default.indexBase = /var/netgloo_blog/lucene/indexes/</div></pre></td></tr></table></figure></p>
+<h4 id="配置一个需要进行检索的实体"><a href="#配置一个需要进行检索的实体" class="headerlink" title="配置一个需要进行检索的实体"></a>配置一个需要进行检索的实体</h4><ol>
+<li>给实体类上添加@Indexed注解，以说明该实体是可建索引的。</li>
+<li>给需要检索的实体属性添加@Field注解，@Field注解含三个可配置参数：<ul>
+<li>index（Index.YES表示该属性将会建索引，Index.NO相反）。</li>
+<li>analyze(Analyze.YES表示该属性在建索引时会根据Lucene的默认分析器进行拆分建索引，通常就是将一个长的句子拆分为一个个的词以便于检索时进行模糊匹配）。</li>
+<li>store(Store.YES表示该属性的实际值会存储到索引中,Store.NO则相反，该参数的配置不影响搜索，只是在检索时如果不想让Hibernate search从数据库中取数据的话可以设置Store.YES并且用projection注入返回对象数据)。</li>
 </ul>
-</blockquote>
-<h3 id="二、基本匹配模型"><a href="#二、基本匹配模型" class="headerlink" title="二、基本匹配模型"></a>二、基本匹配模型</h3><h4 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h4><h5 id="1、枚举选择"><a href="#1、枚举选择" class="headerlink" title="1、枚举选择"></a>1、枚举选择</h5><blockquote>
-<ul>
-<li>[abc12]  选择单个字符：代表该字符可以是a、b、c、1、2中的任意一个</li>
-<li>(abc|efg)  选择一个字符串：代表该字符串要么是‘abc’要么是’efg’</li>
+</li>
+</ol>
+<h3 id="三、建索引"><a href="#三、建索引" class="headerlink" title="三、建索引"></a>三、建索引</h3><p>对于通过Hibernate ORM进行持久化、更新、删除的实体，Hibernate search会自动建立索引，但对于未通过该途径添加或更改的实体（如手动直接操作数据库数据），Hibernate search并不会自动同步数据，需要人为干涉建索引（如果能够自动检测建索引，对于系统的运行速度也应当会有巨大的损耗），在此介绍对数据库中的数据进行初始化批量建索引的方法（需要触发执行）：<br>EntityManager em = entityManagerFactory.createEntityManager();<br>FullTextEntityManager fullTextEntityManager = Search.getFullTextEntityManager(em);<br>fullTextEntityManager.createIndexer().startAndWait();</p>
+<h3 id="四、搜索语法"><a href="#四、搜索语法" class="headerlink" title="四、搜索语法"></a>四、搜索语法</h3><ul>
+<li>关键字精确搜索<br><code>org.apache.lucene.search.Query query = qb
+.keyword()
+.onFields(&quot;title&quot;, &quot;subtitle&quot;, &quot;authors.name&quot;)
+.matching(&quot;Java rocks!&quot;)
+.createQuery();</code></li>
+<li>关键字模糊搜索（模糊搜索的属性analyze参数需配置为 Analyze.YES）<br><code>luceneQuery=mythQB.keyword().fuzzy().withThreshold(.8f).
+withPrefixLength(1).onField(&quot;history&quot;).matching(&quot;starm&quot;).createQuery();</code></li>
+<li>关键字通配符搜索<br>`Query luceneQuery = mythQB<br>  .keyword()<pre><code>.wildcard()
+</code></pre>  .onField(“history”)<br>  .matching(“sto*”)<br>  .createQuery();`</li>
+<li>句子精确搜索<br><code>Query luceneQuery = mythQB
+  .phrase()
+  .onField(&quot;history&quot;)
+  .sentence(&quot;Thou shalt not kill&quot;)
+  .createQuery();</code></li>
+<li>句子模糊搜索<br><code>Query luceneQuery = mythQB
+  .phrase()</code>  <strong>.withSlop(3)</strong><code>.onField(&quot;history&quot;)
+  .sentence(&quot;Thou kill&quot;)
+  .createQuery();</code></li>
 </ul>
-</blockquote>
-<h5 id="2、范围选择"><a href="#2、范围选择" class="headerlink" title="2、范围选择"></a>2、范围选择</h5><blockquote>
-<ul>
-<li>在…范围：如[1-9]代表1-9的一个数字，[a-z]代表a-z的一个英文小写数字</li>
-<li>不在…范围：如[^0-9]代表一个非数字</li>
-</ul>
-</blockquote>
-<h4 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h4><blockquote>
-<ul>
-<li>* 代表该符号前的字符或字符模型可以往后重复0到无数次, 如[0-9]* 可以匹配任何长度的数字，包括长度为0（即不匹配）。</li>
-<li>+ 代表该符号前的字符或字符模型可以往后重复1到无数次，如[0-9]+ 可以匹配1位以上长度的数字，不能1位都不匹配。</li>
-<li>? 代表该符号前的字符或字符模型可以重复0次或1次， 如[0-9]?9可以匹配19，也可以匹配9。</li>
-</ul>
-</blockquote>
-<h4 id="标记字符串起始结尾"><a href="#标记字符串起始结尾" class="headerlink" title="标记字符串起始结尾"></a>标记字符串起始结尾</h4><blockquote>
-<ul>
-<li>^ 表示一行的开始</li>
-<li>$ 表示一行的结尾</li>
-</ul>
-</blockquote>
-<h3 id="三、字符组捕获"><a href="#三、字符组捕获" class="headerlink" title="三、字符组捕获"></a>三、字符组捕获</h3><p>除了匹配字符串是否符合指定的模型之外，我们也希望能提取出字符串中一些有价值的信息以备后续使用，这时正则表达式的字符组捕获功能便非常有用了。基本语法为：分别将匹配串中需要捕获的各个域用括号括起来，需要调用各个捕获域的值时只需用$1、$2、$3…分别对应起括号从左往右的1、2、3…的顺序即可。</p>
-<blockquote>
-<p>如：时间字符串2016-10-02中隐含了年、月、日的信息，我们可以使用正则表达式(\d{4})-(\d{2})-(\d{2})及$1、$2、$3将其中各项的值给提取出来（$1、$2、$3分别代表前面表达式中第1、2、3个括号中匹配的值）。</p>
-</blockquote>
-<p>对于不需要捕获但又需要使用括号的情况可在括号内加上（？：）标注该括号为非捕获域。</p>
-<h3 id="四、需注意特性"><a href="#四、需注意特性" class="headerlink" title="四、需注意特性"></a>四、需注意特性</h3><h4 id="贪婪匹配"><a href="#贪婪匹配" class="headerlink" title="贪婪匹配"></a>贪婪匹配</h4><p>对于重复标识符* 、+、？匹配引擎默认总是会试图优先以尽量多的位数进行匹配，多位数匹配不上才会尝试用更小的位数匹配，如需要启用懒惰模式（即以尽量少的位数进行匹配）则需要在这些标识符后再加上？。</p>
-<blockquote>
-<p>如：用正则表达式&lt;.+&gt;匹配字符串“This is a &lt; EM&gt;first&lt; /EM&gt; test”，匹配的第一个结果将为：“ &lt; EM>first&lt; /EM&gt;”而不是&lt; EM&gt;，因匹配引擎默认优先进行贪婪匹配，将表达式改为&lt;.+?&gt;后改为惰性匹配，此时的第一个匹配结果才是”&lt; EM&gt;”</p>
-</blockquote>
-<h4 id="最左匹配"><a href="#最左匹配" class="headerlink" title="最左匹配"></a>最左匹配</h4><blockquote>
-<p>字符串从左向右找到第一个匹配项便停止</p>
-</blockquote>
 
       
     </div>
@@ -383,7 +361,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/基本技能/" rel="tag">#基本技能</a>
+            <a href="/tags/搜索/" rel="tag">#搜索</a>
           
         </div>
       
@@ -392,17 +370,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/21/所谓的“兴趣”只会让你停滞不前/" rel="next" title="所谓的“兴趣”只会让你停滞不前">
-                <i class="fa fa-chevron-left"></i> 所谓的“兴趣”只会让你停滞不前
+              <a href="/2016/10/03/正则表达式/" rel="next" title="正则表达式">
+                <i class="fa fa-chevron-left"></i> 正则表达式
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/02/Hibernate-search/" rel="prev" title="Hibernate search">
-                Hibernate search <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -417,10 +391,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/10/03/正则表达式/"
-     data-title="正则表达式"
+        <div class="ds-share flat" data-thread-key="2017/01/02/Hibernate-search/"
+     data-title="Hibernate search"
      data-content=""
-     data-url="https://zenghaifei.github.io/2016/10/03/正则表达式/">
+     data-url="https://zenghaifei.github.io/2017/01/02/Hibernate-search/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -447,8 +421,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/03/正则表达式/"
-           data-title="正则表达式" data-url="https://zenghaifei.github.io/2016/10/03/正则表达式/">
+      <div class="ds-thread" data-thread-key="2017/01/02/Hibernate-search/"
+           data-title="Hibernate search" data-url="https://zenghaifei.github.io/2017/01/02/Hibernate-search/">
       </div>
     
   </div>
@@ -588,7 +562,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用语法"><span class="nav-number">2.</span> <span class="nav-text">常用语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、常用匹配符"><span class="nav-number">2.1.</span> <span class="nav-text">一、常用匹配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、基本匹配模型"><span class="nav-number">2.2.</span> <span class="nav-text">二、基本匹配模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选择"><span class="nav-number">2.2.1.</span> <span class="nav-text">选择</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、枚举选择"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">1、枚举选择</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、范围选择"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">2、范围选择</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重复"><span class="nav-number">2.2.2.</span> <span class="nav-text">重复</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标记字符串起始结尾"><span class="nav-number">2.2.3.</span> <span class="nav-text">标记字符串起始结尾</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、字符组捕获"><span class="nav-number">2.3.</span> <span class="nav-text">三、字符组捕获</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、需注意特性"><span class="nav-number">2.4.</span> <span class="nav-text">四、需注意特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#贪婪匹配"><span class="nav-number">2.4.1.</span> <span class="nav-text">贪婪匹配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最左匹配"><span class="nav-number">2.4.2.</span> <span class="nav-text">最左匹配</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特点"><span class="nav-number">2.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用步骤和语法-以JPA为案例"><span class="nav-number">3.</span> <span class="nav-text">使用步骤和语法(以JPA为案例)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、添加依赖包"><span class="nav-number">3.1.</span> <span class="nav-text">一、添加依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、参数配置"><span class="nav-number">3.2.</span> <span class="nav-text">二、参数配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置hiberna-search"><span class="nav-number">3.2.1.</span> <span class="nav-text">配置hiberna search</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置一个需要进行检索的实体"><span class="nav-number">3.2.2.</span> <span class="nav-text">配置一个需要进行检索的实体</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、建索引"><span class="nav-number">3.3.</span> <span class="nav-text">三、建索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、搜索语法"><span class="nav-number">3.4.</span> <span class="nav-text">四、搜索语法</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
