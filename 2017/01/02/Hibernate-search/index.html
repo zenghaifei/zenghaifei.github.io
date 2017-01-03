@@ -90,7 +90,7 @@
 <meta property="og:url" content="https://zenghaifei.github.io/2017/01/02/Hibernate-search/index.html">
 <meta property="og:site_name" content="悠河">
 <meta property="og:description" content="简介搜索在快速、高效的获取信息上拥有至关重要的作用，目前已经是各个应用不可或缺的基础设施之一。由于搜索的非精准性决定了搜索的数据量常常是巨大的，如果使用一般的数据库查询技术响应速度会是一个巨大的问题，因而提供一个快速高效的搜索引擎往往是非常有必要的。全文搜索引擎是目前广泛应用的主流搜索引擎，Google、百度使用的就是此类搜索引擎，在java中Lucene是最出名的一个开源全文搜索引擎，当前最为流">
-<meta property="og:updated_time" content="2017-01-03T15:59:17.000Z">
+<meta property="og:updated_time" content="2017-01-03T16:14:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate search">
 <meta name="twitter:description" content="简介搜索在快速、高效的获取信息上拥有至关重要的作用，目前已经是各个应用不可或缺的基础设施之一。由于搜索的非精准性决定了搜索的数据量常常是巨大的，如果使用一般的数据库查询技术响应速度会是一个巨大的问题，因而提供一个快速高效的搜索引擎往往是非常有必要的。全文搜索引擎是目前广泛应用的主流搜索引擎，Google、百度使用的就是此类搜索引擎，在java中Lucene是最出名的一个开源全文搜索引擎，当前最为流">
@@ -322,12 +322,7 @@
 .createQuery();</code></li>
 <li>关键字模糊搜索（模糊搜索的属性analyze参数需配置为 Analyze.YES）<br><code>luceneQuery=mythQB.keyword().fuzzy().withThreshold(.8f).
 withPrefixLength(1).onField(&quot;history&quot;).matching(&quot;starm&quot;).createQuery();</code></li>
-<li>关键字通配符搜索<br><code>Query luceneQuery = mythQB
-  .keyword()
-  .wildcard()
-  .onField(&quot;history&quot;)
-  .matching(&quot;sto*&quot;)
-  .createQuery();</code></li>
+<li>关键字通配符搜索<br><code>Query luceneQuery = mythQB.keyword().wildcard().onField(&quot;history&quot;).matching(&quot;sto*&quot;).createQuery();</code></li>
 <li>句子精确搜索<br><code>Query luceneQuery = mythQB
   .phrase()
   .onField(&quot;history&quot;)
@@ -343,8 +338,12 @@ withPrefixLength(1).onField(&quot;history&quot;).matching(&quot;starm&quot;).cre
 <li><p>projection(从索引存储的属性值中获取结果值), 如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">FullTextQuery fullTextQuery = fullTextEntityManager.createFullTextQuery(query,Article.class);</div><div class="line">fullTextQuery.setProjection(&quot;id&quot;,&quot;author.name&quot;,&quot;title&quot;,&quot;createDate&quot;,&quot;updateDate&quot;,&quot;category.showName&quot;,&quot;url&quot;,&quot;coverImage.url&quot;,&quot;introduction&quot;,&quot;issuer.nickName&quot;);</div><div class="line">Constructor constructor;</div><div class="line">try &#123;</div><div class="line">    constructor = ArticleResponse.class.getConstructor(</div><div class="line">            new Class[] &#123;Long.class, String.class, String.class, Date.class, Date.class, String.class, String.class, String.class, String.class, String.class&#125;);</div><div class="line">&#125; catch (NoSuchMethodException e) &#123;</div><div class="line">    log.error(&quot;Error obtaining constructor(Long.class, String.class, String.class, Date.class, Date.class, String.class, String.class, String.class, String.class, String.class)&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">fullTextQuery.setResultTransformer(new AliasToBeanConstructorResultTransformer(constructor));</div></pre></td></tr></table></figure>
 </li>
-<li><p>设置分页与超时<br><code>fullTextQuery.setFirstResult(startPosition).setMaxResults(p.getPageSize());
-fullTextQuery.setHint(&quot;javax.persistence.query.timeout&quot;, 400);</code></p>
+<li><p>设置分页<br><code>fullTextQuery.setFirstResult(startPosition).setMaxResults(p.getPageSize());</code></p>
+</li>
+<li>设置超时<ul>
+<li>超时抛出异常：<code>fullTextQuery.setHint(&quot;javax.persistence.query.timeout&quot;, 400);</code></li>
+<li>超时直接返回当前已检索的结果 <code>fullTextQuery.limitExecutionTimeTo(1000,TimeUnit.MILLISECONDS)</code></li>
+</ul>
 </li>
 </ul>
 <h3 id="五、更多"><a href="#五、更多" class="headerlink" title="五、更多"></a>五、更多</h3><p>Hibernate search 提供了moreLikeThis()的方法用了搜寻与指定实体对象相似的实体，相似度越高，搜索的排名越前，由此可以用它来做购物车的推荐系统等，更多请查阅<a href="https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/?v=5.5#search-query-querydsl" target="_blank" rel="external">官方文档</a></p>
