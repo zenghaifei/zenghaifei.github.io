@@ -90,7 +90,7 @@
 <meta property="og:url" content="https://zenghaifei.github.io/2017/01/02/Hibernate-search/index.html">
 <meta property="og:site_name" content="悠河">
 <meta property="og:description" content="简介搜索在快速、高效的获取信息上拥有至关重要的作用，目前已经是各个应用不可或缺的基础设施之一。由于搜索的非精准性决定了搜索的数据量常常是巨大的，如果使用一般的数据库查询技术响应速度会是一个巨大的问题，因而提供一个快速高效的搜索引擎往往是非常有必要的。全文搜索引擎是目前广泛应用的主流搜索引擎，Google、百度使用的就是此类搜索引擎，在java中Lucene是最出名的一个开源全文搜索引擎，当前最为流">
-<meta property="og:updated_time" content="2017-01-03T15:55:25.000Z">
+<meta property="og:updated_time" content="2017-01-03T15:59:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate search">
 <meta name="twitter:description" content="简介搜索在快速、高效的获取信息上拥有至关重要的作用，目前已经是各个应用不可或缺的基础设施之一。由于搜索的非精准性决定了搜索的数据量常常是巨大的，如果使用一般的数据库查询技术响应速度会是一个巨大的问题，因而提供一个快速高效的搜索引擎往往是非常有必要的。全文搜索引擎是目前广泛应用的主流搜索引擎，Google、百度使用的就是此类搜索引擎，在java中Lucene是最出名的一个开源全文搜索引擎，当前最为流">
@@ -293,7 +293,7 @@
       
 
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>搜索在快速、高效的获取信息上拥有至关重要的作用，目前已经是各个应用不可或缺的基础设施之一。由于搜索的非精准性决定了搜索的数据量常常是巨大的，如果使用一般的数据库查询技术响应速度会是一个巨大的问题，因而提供一个快速高效的搜索引擎往往是非常有必要的。全文搜索引擎是目前广泛应用的主流搜索引擎，Google、百度使用的就是此类搜索引擎，在java中Lucene是最出名的一个开源全文搜索引擎，当前最为流行几个开源搜索集成框架——<a href="https://www.elastic.co/" target="_blank" rel="external">Elasticsearch</a>、<a href="http://lucene.apache.org/solr/" target="_blank" rel="external">Solr</a>、Hibernate search等的底层搜索技术均是基于Lucene。</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>搜索在快速、高效的获取信息上拥有至关重要的作用，目前已经是各个应用不可或缺的基础设施之一。由于搜索的非精准性决定了搜索的数据量常常是巨大的，如果使用一般的数据库查询技术响应速度会是一个巨大的问题，因而提供一个快速高效的搜索引擎往往是非常有必要的。<a href="http://baike.baidu.com/link?url=IzAmawYYnmbDWzgb-bIegk6aJKpvP4TW79HqFTvR9SOGcdd5V9CbfrNOCVf3elYbn5_-4t6xx62r3UupwIrJJQr1r7fzBkNC9nh5axt5A3dJYq6O76Na0gT7UvS-J7DVlSvvzYbJkscQjLTJ3Hg1Bq" target="_blank" rel="external">全文搜索引擎</a>是目前广泛应用的主流搜索引擎，Google、百度使用的就是此类搜索引擎，在java中Lucene是最出名的一个开源全文搜索引擎，当前最为流行几个开源搜索集成框架——<a href="https://www.elastic.co/" target="_blank" rel="external">Elasticsearch</a>、<a href="http://lucene.apache.org/solr/" target="_blank" rel="external">Solr</a>、Hibernate search等的底层搜索技术均是基于Lucene。</p>
 <p><strong>在已经使用了Hibernate作为数据持久层框架的项目中，整合Hibernate search作为全文搜索工具是非常方便的，简单来说，Hibernate search提供了非常简洁、易用的调用方法，在需要模糊查询（或匹配度、相似度查询）的场景中可以考虑使用该工具。</strong></p>
 <h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
 <li>提供了模糊匹配的功能（不同于sql中的“like%”，模糊匹配可以允许错别字）。</li>
