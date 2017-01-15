@@ -84,16 +84,76 @@
 
 
 
-<meta name="description" content="简介sftp是Secure File Transfer Protocol的缩写，为一种安全的文件传输协议，基于安全可靠的ssh协议（默认端口号为22）加密传输，因而安全性非常好。常用的文件传输协议还有ftp、ftps，在此简要对比一下这几种协议的差别：|           | FTP          | FTPS        | SFTP           || :——– | :———–">
+<meta name="description" content="简介sftp是Secure File Transfer Protocol的缩写，为一种安全的文件传输协议，基于安全可靠的ssh协议（默认端口号为22）加密传输，因而安全性非常好。常用的文件传输协议还有ftp、ftps，在此简要对比一下这几种协议的差别：
+
+
+
+
+FTP
+FTPS
+SFTP
+
+
+
+
+安全性
+极差（明码传输)
+好(FTP+SSL)
+好(加密，完整性校验)
+
+
+传输速度
+非常快
+相对慢">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sftp文件传输协议">
 <meta property="og:url" content="https://zenghaifei.github.io/2017/01/08/sftp文件传输协议/index.html">
 <meta property="og:site_name" content="悠河">
-<meta property="og:description" content="简介sftp是Secure File Transfer Protocol的缩写，为一种安全的文件传输协议，基于安全可靠的ssh协议（默认端口号为22）加密传输，因而安全性非常好。常用的文件传输协议还有ftp、ftps，在此简要对比一下这几种协议的差别：|           | FTP          | FTPS        | SFTP           || :——– | :———–">
-<meta property="og:updated_time" content="2017-01-15T11:44:46.000Z">
+<meta property="og:description" content="简介sftp是Secure File Transfer Protocol的缩写，为一种安全的文件传输协议，基于安全可靠的ssh协议（默认端口号为22）加密传输，因而安全性非常好。常用的文件传输协议还有ftp、ftps，在此简要对比一下这几种协议的差别：
+
+
+
+
+FTP
+FTPS
+SFTP
+
+
+
+
+安全性
+极差（明码传输)
+好(FTP+SSL)
+好(加密，完整性校验)
+
+
+传输速度
+非常快
+相对慢">
+<meta property="og:updated_time" content="2017-01-15T11:46:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sftp文件传输协议">
-<meta name="twitter:description" content="简介sftp是Secure File Transfer Protocol的缩写，为一种安全的文件传输协议，基于安全可靠的ssh协议（默认端口号为22）加密传输，因而安全性非常好。常用的文件传输协议还有ftp、ftps，在此简要对比一下这几种协议的差别：|           | FTP          | FTPS        | SFTP           || :——– | :———–">
+<meta name="twitter:description" content="简介sftp是Secure File Transfer Protocol的缩写，为一种安全的文件传输协议，基于安全可靠的ssh协议（默认端口号为22）加密传输，因而安全性非常好。常用的文件传输协议还有ftp、ftps，在此简要对比一下这几种协议的差别：
+
+
+
+
+FTP
+FTPS
+SFTP
+
+
+
+
+安全性
+极差（明码传输)
+好(FTP+SSL)
+好(加密，完整性校验)
+
+
+传输速度
+非常快
+相对慢">
 
 
 
@@ -293,7 +353,37 @@
       
 
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>sftp是Secure File Transfer Protocol的缩写，为一种安全的文件传输协议，基于安全可靠的ssh协议（默认端口号为22）加密传输，因而安全性非常好。常用的文件传输协议还有ftp、ftps，在此简要对比一下这几种协议的差别：<br>|           | FTP          | FTPS        | SFTP           |<br>| :——– | :———– | :———–| :————–|<br>| 安全性     | 极差（明码传输)| 好(FTP+SSL)  | 好(加密，完整性校验)|<br>| 传输速度   | 非常快        |  相对慢       | 最慢           |<br>| 端口号     | 双端口号      | 双端口号      | 单端口（默认22） |</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>sftp是Secure File Transfer Protocol的缩写，为一种安全的文件传输协议，基于安全可靠的ssh协议（默认端口号为22）加密传输，因而安全性非常好。常用的文件传输协议还有ftp、ftps，在此简要对比一下这几种协议的差别：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">FTP</th>
+<th style="text-align:left">FTPS</th>
+<th style="text-align:left">SFTP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">安全性</td>
+<td style="text-align:left">极差（明码传输)</td>
+<td style="text-align:left">好(FTP+SSL)</td>
+<td style="text-align:left">好(加密，完整性校验)</td>
+</tr>
+<tr>
+<td style="text-align:left">传输速度</td>
+<td style="text-align:left">非常快</td>
+<td style="text-align:left">相对慢</td>
+<td style="text-align:left">最慢</td>
+</tr>
+<tr>
+<td style="text-align:left">端口号</td>
+<td style="text-align:left">双端口号</td>
+<td style="text-align:left">双端口号</td>
+<td style="text-align:left">单端口（默认22）</td>
+</tr>
+</tbody>
+</table>
 <p><strong>以上对比可知，sftp由于其安全与易用性已经成为文件传输的首选方案。</strong></p>
 <h2 id="java操作案例"><a href="#java操作案例" class="headerlink" title="java操作案例"></a>java操作案例</h2><h3 id="一、常用库"><a href="#一、常用库" class="headerlink" title="一、常用库"></a>一、常用库</h3><p>实现了sftp客户端通信的开源库，目前有Commons VFS 、SSHJ以及<a href="http://www.jcraft.com/jsch/" target="_blank" rel="external">JSch</a>，其中Jsch基本已经是事实上的标准，为此以Jsch为案例，展示常用的操作方法。</p>
 <h3 id="二、基于Jsch库进行sftp常用文件传输操作"><a href="#二、基于Jsch库进行sftp常用文件传输操作" class="headerlink" title="二、基于Jsch库进行sftp常用文件传输操作"></a>二、基于Jsch库进行sftp常用文件传输操作</h3><h4 id="1-引入库（maven）"><a href="#1-引入库（maven）" class="headerlink" title="1. 引入库（maven）"></a>1. 引入库（maven）</h4><p>在pom文件中引入如下依赖库：</p>
