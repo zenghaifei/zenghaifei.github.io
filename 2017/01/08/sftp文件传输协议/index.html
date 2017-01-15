@@ -1,0 +1,704 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Zenghaifei, freeriver, blog" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="简介sftp是Secure File Transfer Protocol的缩写，为一种安全的文件传输协议，基于安全可靠的ssh协议（默认端口号为22）加密传输，因而安全性非常好。常用的文件传输协议还有ftp、ftps，在此简要对比一下这几种协议的差别：        | FTP             | FTPS                | SFTP——–|—————–|———————|—">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sftp文件传输协议">
+<meta property="og:url" content="https://zenghaifei.github.io/2017/01/08/sftp文件传输协议/index.html">
+<meta property="og:site_name" content="悠河">
+<meta property="og:description" content="简介sftp是Secure File Transfer Protocol的缩写，为一种安全的文件传输协议，基于安全可靠的ssh协议（默认端口号为22）加密传输，因而安全性非常好。常用的文件传输协议还有ftp、ftps，在此简要对比一下这几种协议的差别：        | FTP             | FTPS                | SFTP——–|—————–|———————|—">
+<meta property="og:updated_time" content="2017-01-15T11:04:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sftp文件传输协议">
+<meta name="twitter:description" content="简介sftp是Secure File Transfer Protocol的缩写，为一种安全的文件传输协议，基于安全可靠的ssh协议（默认端口号为22）加密传输，因而安全性非常好。常用的文件传输协议还有ftp、ftps，在此简要对比一下这几种协议的差别：        | FTP             | FTPS                | SFTP——–|—————–|———————|—">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6311824304266806000,
+      author: 'Colin'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://zenghaifei.github.io/2017/01/08/sftp文件传输协议/"/>
+
+  <title> sftp文件传输协议 | 悠河 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">悠河</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">自由之路</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                sftp文件传输协议
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-08T22:54:16+08:00" content="2017-01-08">
+              2017-01-08
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/08/sftp文件传输协议/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/08/sftp文件传输协议/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>sftp是Secure File Transfer Protocol的缩写，为一种安全的文件传输协议，基于安全可靠的ssh协议（默认端口号为22）加密传输，<br>因而安全性非常好。常用的文件传输协议还有ftp、ftps，在此简要对比一下这几种协议的差别：<br>        | FTP             | FTPS                | SFTP<br>——–|—————–|———————|——<br>安全性   | 极差（明码传输)| 好(FTP添加了SSL的证书校验机制)      |  好(基于SSH的安全性，加密传输，且有数据传输的完整性校验机制)<br>——–|—————–|———————|——<br>传输速度 | 非常快           |  相对慢               | 最慢<br>——–|—————–|———————-|——-<br>占用端口号| 双端口号通信，通常21用于传输控制信息，另一个端口号用于传输数据| 双端口号 | 单端口号（默认为ssh的22）</p>
+<p><strong>以上对比可知，sftp由于其安全与易用性已经成为文件传输的首选方案。</strong></p>
+<h2 id="java操作案例"><a href="#java操作案例" class="headerlink" title="java操作案例"></a>java操作案例</h2><h3 id="常用库"><a href="#常用库" class="headerlink" title="常用库"></a>常用库</h3><p>实现了sftp客户端通信的开源库，目前有Commons VFS 、SSHJ以及<a href="http://www.jcraft.com/jsch/" target="_blank" rel="external">JSch</a>，<br>其中Jsch基本已经是事实上的标准，为此以Jsch为案例，展示常用的操作方法。</p>
+<h3 id="基于Jsch库进行sftp常用文件传输操作"><a href="#基于Jsch库进行sftp常用文件传输操作" class="headerlink" title="基于Jsch库进行sftp常用文件传输操作"></a>基于Jsch库进行sftp常用文件传输操作</h3><ol>
+<li><p>引入库（maven）<br>在pom文件中引入如下依赖库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">    &lt;groupId&gt;com.jcraft&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;jsch&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;0.1.53&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>常用操作方法</p>
+</li>
+</ol>
+<ul>
+<li>打开连接session与channel及断开连接<br><strong>注：sftp连接是一个稀缺资源，如果不需要长连接，则在使用完后需要进行关闭，使用长连接可以考虑预先准备连接池的方式加快速度（建立连接比较慢）</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">private Session openSession() throws JSchException &#123;</div><div class="line">        JSch jsch = new JSch();</div><div class="line">        session = jsch.getSession(getUsername(), getHost(), getPort());</div><div class="line">        session.setPassword(getPassword());</div><div class="line">        session.setConfig(&quot;StrictHostKeyChecking&quot;, &quot;no&quot;);</div><div class="line">        session.setConfig(&quot;PreferredAuthentications&quot;, &quot;password,gssapi-with-mic,publickey&quot;);</div><div class="line">        log.info(&quot;Connecting to &quot; + getHost() + &quot;:&quot; + getPort());</div><div class="line">        session.connect();</div><div class="line">        return session;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">private ChannelSftp openSftpChannel() &#123;</div><div class="line">        if (this.channel == null) &#123;</div><div class="line">            this.channel = (ChannelSftp) openSession().openChannel(&quot;sftp&quot;);</div><div class="line">            channel.connect();</div><div class="line">        &#125;</div><div class="line">        return this.channel;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public void disconnect() &#123;</div><div class="line">        if (this.channel != null)</div><div class="line">            this.channel.disconnect();</div><div class="line">        if (this.session != null)</div><div class="line">            this.session.disconnect();</div><div class="line">        this.channel = null;</div><div class="line">        this.session = null;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>常用文件目录操作<br><strong>注：sftp的操作有一个上下文的概念，要查看或操作一个文件或目录需要进入到该文件或目录的父目录</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">   * 判断一个文件或目录是否存在</div><div class="line">   *</div><div class="line">   * @param absolutePath</div><div class="line">   * @return</div><div class="line">   * @throws SftpException</div><div class="line">   */</div><div class="line">  public boolean exist(String absolutePath) &#123;</div><div class="line">      ChannelSftp channel = openSftpChannel();</div><div class="line">      try &#123;</div><div class="line">          channel.stat(absolutePath);</div><div class="line">      &#125; catch (SftpException e) &#123;</div><div class="line">          return false;</div><div class="line">      &#125;</div><div class="line">      return true;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">     * 判断一个路径是否为目录</div><div class="line">     *</div><div class="line">     * @param remotePath</div><div class="line">     * @return</div><div class="line">     * @throws Exception</div><div class="line">     */</div><div class="line">    public boolean isDir(String remotePath) &#123;</div><div class="line">          ChannelSftp channel = openSftpChannel();</div><div class="line">          SftpATTRS attrs = channel.stat(remotePath);</div><div class="line">          return attrs.isDir();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">   * 导航到一个路径的父目录（如果该路径指向的是一个文件，则导航到该文件所在的文件夹）</div><div class="line">   *</div><div class="line">   * @param absolutePath</div><div class="line">   * @throws JSchException</div><div class="line">   * @throws SftpException</div><div class="line">   */</div><div class="line">  private void navigateToParentDir(String absolutePath) &#123;</div><div class="line">          ChannelSftp channel = openSftpChannel();</div><div class="line">          int lastIndex = absolutePath.lastIndexOf(&quot;/&quot;);</div><div class="line">          String parentPath = absolutePath.substring(0, lastIndex + 1);</div><div class="line">          if (exist(parentPath) &amp;&amp; isDir(parentPath)) &#123;</div><div class="line">              channel.cd(parentPath);</div><div class="line">          &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">   * 列出一个路径下的所有文件或目录</div><div class="line">   *</div><div class="line">   * @param absoluteDir</div><div class="line">   */</div><div class="line">public List&lt;SftpFile&gt; lsFile(String absoluteDir) &#123;</div><div class="line">          channel = openSftpChannel();</div><div class="line">          List&lt;SftpFile&gt; sftpFileList = new ArrayList&lt;&gt;();</div><div class="line">          Vector&lt;ChannelSftp.LsEntry&gt; vector = channel.ls(absoluteDir);</div><div class="line">          for (ChannelSftp.LsEntry entry : vector) &#123;</div><div class="line">              String fileName = entry.getFilename();</div><div class="line">              if (!StringUtils.equals(fileName, &quot;.&quot;) &amp;&amp; !StringUtils.equals(fileName, &quot;..&quot;)) &#123;</div><div class="line">                  SftpATTRS status = entry.getAttrs();</div><div class="line">                  Boolean isDir = status.isDir();</div><div class="line">                  String modifyTime = status.getMtimeString();</div><div class="line">                  Long size = null;</div><div class="line">                  if (!isDir) &#123;</div><div class="line">                      size = status.getSize();</div><div class="line">                  &#125;</div><div class="line">                  SftpFile sftpFile = new SftpFile(fileName, modifyTime, size, isDir);</div><div class="line">                  sftpFileList.add(sftpFile);</div><div class="line">              &#125;</div><div class="line">          &#125;</div><div class="line">          return sftpFileList;</div><div class="line"></div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 根据绝对路径或相对路径（相对ssh登录帐号的默认当前目录）创建文件目录</div><div class="line"> *</div><div class="line"> * @param path</div><div class="line"> */</div><div class="line">public void makeDirs(String path) &#123;</div><div class="line">        String[] components = path.split(&quot;/&quot;);</div><div class="line">        ChannelSftp channel = openSftpChannel();</div><div class="line">        if (false == StringUtils.equals(&quot;&quot;, components[0])) &#123;//在path代表相对路径时加上当前路径</div><div class="line">            String currentPath = channel.pwd();</div><div class="line">            path = currentPath + &quot;/&quot; + path;</div><div class="line">        &#125;</div><div class="line">        components = path.split(&quot;/&quot;);</div><div class="line"></div><div class="line">        String currentPath = &quot;&quot;;</div><div class="line">        for (int i = 1; i &lt; components.length; i++) &#123;</div><div class="line">            currentPath += &quot;/&quot; + components[i];</div><div class="line">            if (!exist(currentPath)) &#123;</div><div class="line">                channel.mkdir(currentPath);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">   * 根据绝对路径删除文件或文件夹</div><div class="line">   *</div><div class="line">   * @param path</div><div class="line">   * @return</div><div class="line">   * @throws Exception</div><div class="line">   */</div><div class="line">  public void deleteFile(String path) &#123;</div><div class="line">          if (!exist(path)) &#123;</div><div class="line">              throw new ResourceNotFoundException(&quot;不存在的文件或目录！&quot;);</div><div class="line">          &#125;</div><div class="line">          ChannelSftp channel = openSftpChannel();</div><div class="line">          navigateToParentDir(path);</div><div class="line"></div><div class="line">          if (isDir(path)) &#123;</div><div class="line">              channel.cd(path);</div><div class="line">              //删除目录里面的内容</div><div class="line">              Vector&lt;ChannelSftp.LsEntry&gt; vector = channel.ls(&quot;.&quot;);</div><div class="line">              for (ChannelSftp.LsEntry entry : vector) &#123;</div><div class="line">                  String subFileName = entry.getFilename();</div><div class="line">                  String subFilePath = path + &quot;/&quot; + entry.getFilename();</div><div class="line">                  if (!StringUtils.equals(subFileName, &quot;.&quot;) &amp;&amp; !StringUtils.equals(subFileName, &quot;..&quot;)) &#123;</div><div class="line">                      deleteFile(subFilePath);</div><div class="line">                  &#125;</div><div class="line">              &#125;</div><div class="line">              channel.cd(&quot;..&quot;);</div><div class="line">              //获取待删除目录名</div><div class="line">              String[] components = path.split(&quot;/&quot;);</div><div class="line">              String lastPathName = components[components.length - 1];</div><div class="line">              if (StringUtils.equals(lastPathName, &quot;&quot;)) &#123;</div><div class="line">                  lastPathName = components[components.length - 2];</div><div class="line">              &#125;</div><div class="line">              if (false == StringUtils.equals(lastPathName, &quot;&quot;)) &#123;</div><div class="line">                  channel.rmdir(lastPathName);//rmdir只能删除一个空目录，要删除含文件的目录先得把内层的目录与文件都先删除，入口参数是一个相对路径而不是绝对路径</div><div class="line">              &#125;</div><div class="line">          &#125; else &#123;</div><div class="line">              channel.rm(path);//是文件的话直接删除</div><div class="line">          &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">   * 发送文件到服务器目录</div><div class="line">   * @param inStream</div><div class="line">   * @param remoteDir</div><div class="line">   * @param remoteFileName</div><div class="line">   */</div><div class="line">  public void sendFileToRemote(InputStream inStream, String remoteDir, String remoteFileName) &#123;</div><div class="line">          ChannelSftp channel = openSftpChannel();</div><div class="line">          if (remoteDir.length() &gt; 0) &#123;</div><div class="line">              channel.cd(remoteDir);</div><div class="line">          &#125;</div><div class="line">         channel.put(inStream, remoteFileName);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">   * 获取一个sftp服务器的文件流</div><div class="line">   *</div><div class="line">   * @param remoteFilePath</div><div class="line">   * @return</div><div class="line">   */</div><div class="line">  public InputStream retrieveFileStream(String remoteFilePath) &#123;</div><div class="line">          ChannelSftp channel = openSftpChannel();</div><div class="line">          if (isDir(remoteFilePath)) &#123;</div><div class="line">              throw new InvalidParametersException(&quot;path poin to a directory, not a file!&quot;);</div><div class="line">          &#125;</div><div class="line"></div><div class="line">          return channel.get(remoteFilePath);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Colin Zeng wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您订阅我的微信公众号！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/02/Hibernate-search/" rel="next" title="Hibernate search">
+                <i class="fa fa-chevron-left"></i> Hibernate search
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/01/08/sftp文件传输协议/"
+     data-title="sftp文件传输协议"
+     data-content=""
+     data-url="https://zenghaifei.github.io/2017/01/08/sftp文件传输协议/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/08/sftp文件传输协议/"
+           data-title="sftp文件传输协议" data-url="https://zenghaifei.github.io/2017/01/08/sftp文件传输协议/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Colin Zeng" />
+          <p class="site-author-name" itemprop="name">Colin Zeng</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zenghaifei" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/zenghaifei" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-zhihu"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/fhope/profile" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/hai_fei/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-douban"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xiaolai.li/" title="lixiaolai" target="_blank">lixiaolai</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://smalltalk.xdite.net/" title="xdite" target="_blank">xdite</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java操作案例"><span class="nav-number">2.</span> <span class="nav-text">java操作案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用库"><span class="nav-number">2.1.</span> <span class="nav-text">常用库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于Jsch库进行sftp常用文件传输操作"><span class="nav-number">2.2.</span> <span class="nav-text">基于Jsch库进行sftp常用文件传输操作</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Colin Zeng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zenghaifei"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
