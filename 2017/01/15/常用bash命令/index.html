@@ -114,7 +114,7 @@
 
 根据相对路径（相对当前路径）进入一个目录  cd folderName/subfolderName/
 根据绝对路径进入一个目录 cd /fo">
-<meta property="og:updated_time" content="2017-01-16T14:53:14.000Z">
+<meta property="og:updated_time" content="2017-01-16T14:54:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用bash命令">
 <meta name="twitter:description" content="一、基本知识
@@ -391,11 +391,7 @@
 <ul>
 <li>以管理员权限执行一个命令 sudo [command]  (“sudo”代表“super user do”)</li>
 <li>后台执行一条命令 [command] &amp;</li>
-<li>后台执行一条命令，并使其在session断开后依然执行  nohup [commandName] &amp;  （“nohup ”代表“no hang up ”）<br>如：nohup java -jar XXX.jar &amp; 代表在后台一直执行一个jar包</li>
-</ul>
-</blockquote>
-<p>  <strong>注：通常在shell中执行的后台运行程序在session结束后就自动关闭了，如果需要session后程序依然在后台执行，则加上”nohup”</strong></p>
-<ul>
+<li>后台执行一条命令，并使其在session断开后依然执行  nohup [commandName] &amp;  （“nohup ”代表“no hang up ”）<br>如：nohup java -jar XXX.jar &amp; 代表在后台一直执行一个jar包<br><strong>注：通常在shell中执行的后台运行程序在session结束后就自动关闭了，如果需要session后程序依然在后台执行，则加上”nohup”</strong></li>
 <li>显示前一次（或后一次）执行的命令 ↑（后一次↓）</li>
 <li>显示最后的n条历史命令 history [n]</li>
 <li>交互式的搜索历史指令 ctrl r</li>
@@ -415,6 +411,7 @@
 <li>[command A] ; [command B] 执行完A后执行B，无论A是否执行成功</li>
 <li>[command A] &amp;&amp; [command B] 执行A，当A执行成功后才执行B</li>
 </ul>
+</blockquote>
 <h2 id="四、输出"><a href="#四、输出" class="headerlink" title="四、输出"></a>四、输出</h2><blockquote>
 <ul>
 <li>echo 输出到屏幕上(会在输出的最后一行加上一个新的空行)</li>
