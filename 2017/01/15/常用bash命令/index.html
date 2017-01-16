@@ -84,31 +84,40 @@
 
 
 
-<meta name="description" content="一、文件与文件夹操作1、进入文件目录
+<meta name="description" content="一、基本知识
 
-查看当前所在目录路径 pwd (print working directory 的简写)
+“~”在shell中代表home目录
+“..”代表上一级目录
+“.”代表当前目录
+文件名以“.”开头的为隐藏文件
+查看当前目录路径 pwd (print working directory 的简写)二、文件与文件夹操作1、进入文件目录
 根据相对路径（相对当前路径）进入一个目录  cd folderName/subfolderName/
-根据绝对路径进入一个目录 cd /folderName/subfolderName/
-返回上一级或多级目录 cd ..(cd ../..) 注：”..”代表上一级目录，">
+根据绝对路径进入一个目录 cd /folder">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用bash命令">
 <meta property="og:url" content="https://zenghaifei.github.io/2017/01/15/常用bash命令/index.html">
 <meta property="og:site_name" content="悠河">
-<meta property="og:description" content="一、文件与文件夹操作1、进入文件目录
+<meta property="og:description" content="一、基本知识
 
-查看当前所在目录路径 pwd (print working directory 的简写)
+“~”在shell中代表home目录
+“..”代表上一级目录
+“.”代表当前目录
+文件名以“.”开头的为隐藏文件
+查看当前目录路径 pwd (print working directory 的简写)二、文件与文件夹操作1、进入文件目录
 根据相对路径（相对当前路径）进入一个目录  cd folderName/subfolderName/
-根据绝对路径进入一个目录 cd /folderName/subfolderName/
-返回上一级或多级目录 cd ..(cd ../..) 注：”..”代表上一级目录，">
-<meta property="og:updated_time" content="2017-01-15T15:26:49.000Z">
+根据绝对路径进入一个目录 cd /folder">
+<meta property="og:updated_time" content="2017-01-16T14:49:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用bash命令">
-<meta name="twitter:description" content="一、文件与文件夹操作1、进入文件目录
+<meta name="twitter:description" content="一、基本知识
 
-查看当前所在目录路径 pwd (print working directory 的简写)
+“~”在shell中代表home目录
+“..”代表上一级目录
+“.”代表当前目录
+文件名以“.”开头的为隐藏文件
+查看当前目录路径 pwd (print working directory 的简写)二、文件与文件夹操作1、进入文件目录
 根据相对路径（相对当前路径）进入一个目录  cd folderName/subfolderName/
-根据绝对路径进入一个目录 cd /folderName/subfolderName/
-返回上一级或多级目录 cd ..(cd ../..) 注：”..”代表上一级目录，">
+根据绝对路径进入一个目录 cd /folder">
 
 
 
@@ -308,12 +317,16 @@
       
 
       
-        <h2 id="一、文件与文件夹操作"><a href="#一、文件与文件夹操作" class="headerlink" title="一、文件与文件夹操作"></a>一、文件与文件夹操作</h2><h3 id="1、进入文件目录"><a href="#1、进入文件目录" class="headerlink" title="1、进入文件目录"></a>1、进入文件目录</h3><blockquote>
+        <h2 id="一、基本知识"><a href="#一、基本知识" class="headerlink" title="一、基本知识"></a>一、基本知识</h2><blockquote>
 <ul>
-<li>查看当前所在目录路径 pwd (print working directory 的简写)</li>
+<li>“~”在shell中代表home目录</li>
+<li>“..”代表上一级目录</li>
+<li>“.”代表当前目录</li>
+<li>文件名以“.”开头的为隐藏文件</li>
+<li>查看当前目录路径 pwd (print working directory 的简写)<h2 id="二、文件与文件夹操作"><a href="#二、文件与文件夹操作" class="headerlink" title="二、文件与文件夹操作"></a>二、文件与文件夹操作</h2><h3 id="1、进入文件目录"><a href="#1、进入文件目录" class="headerlink" title="1、进入文件目录"></a>1、进入文件目录</h3></li>
 <li>根据相对路径（相对当前路径）进入一个目录  cd folderName/subfolderName/</li>
 <li>根据绝对路径进入一个目录 cd /folderName/subfolderName/</li>
-<li>返回上一级或多级目录 cd ..(cd ../..) <strong>注：”..”代表上一级目录，“.”代表当前目录</strong></li>
+<li>返回上一级或多级目录 cd ..(cd ../..)</li>
 <li>进入home目录 cd</li>
 <li>返回上一次目录跳转前所在目录 cd -</li>
 </ul>
@@ -321,7 +334,7 @@
 <h3 id="2、查看目录文件信息"><a href="#2、查看目录文件信息" class="headerlink" title="2、查看目录文件信息"></a>2、查看目录文件信息</h3><blockquote>
 <ul>
 <li>列出当前目录的所有可见文件名 ls （”ls”代表单词“list”）</li>
-<li>列出当前目录下的所有文件名（含隐藏文件，隐藏文件的文件名以”.”开头） ls -a （”-a”代表“all”）</li>
+<li>列出当前目录下的所有文件名（含隐藏文件） ls -a （”-a”代表“all”）</li>
 <li>详细列出当前目录下的所有可见文件信息 ls -l (“-l”代表“long”)</li>
 <li>递归列出当前目录下的所有可见文件及文件夹下的文件 ls -R</li>
 <li>用系统默认软件打开当前目录下的一个文件 open [fileName]</li>
@@ -346,12 +359,58 @@
 </li>
 </ul>
 </blockquote>
-<h3 id="3、加快命令操作速度的快捷键"><a href="#3、加快命令操作速度的快捷键" class="headerlink" title="3、加快命令操作速度的快捷键"></a>3、加快命令操作速度的快捷键</h3><ul>
+<h3 id="4、移动拷贝文件"><a href="#4、移动拷贝文件" class="headerlink" title="4、移动拷贝文件"></a>4、移动拷贝文件</h3><blockquote>
+<ul>
+<li>在当前目录下复制一个文件为新的文件名 cp [file] [newfile]</li>
+<li>复制一个文件到指定目录 cp [file] [dir] (其中dir可以是相对路径，也可以是绝对路径)</li>
+<li>重命名一个文件 mv [fileName] [new filename]</li>
+<li>移动一个文件到一个文件夹<ol>
+<li>mv [fileName] [dir]  (目标文件夹含同名文件直接覆盖)</li>
+<li>mv -i [fileName] [dir] (目标文件夹含同名文件提醒是否覆盖)</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<h2 id="三、指令与程序操作"><a href="#三、指令与程序操作" class="headerlink" title="三、指令与程序操作"></a>三、指令与程序操作</h2><blockquote>
+<ul>
+<li>以管理员权限执行一个命令 sudo [command]  (“sudo”代表“super user do”)</li>
+<li>后台执行一条命令 [command] &amp;</li>
+<li>后台执行一条命令，并使其在session断开后依然执行  nohup [commandName] &amp;  （“nohup ”代表“no hang up ”）<br>如：nohup java -jar XXX.jar &amp; 代表在后台一直执行一个jar包<br><strong>注：通常在shell中执行的后台运行程序在session结束后就自动关闭了，如果需要session后程序依然在后台执行，则加上”nohup”</strong></li>
+<li>显示前一次（或后一次）执行的命令 ↑（后一次↓）</li>
+<li>显示最后的n条历史命令 history [n]</li>
+<li>交互式的搜索历史指令 ctrl r</li>
+<li>查看程序或指令是否在运行：ps -ef|grep [commandName] （支持名称的部分匹配，展示的结果第二列的数字为pid）</li>
+<li>显示当前正在后台运行的进程：top （按q退出）</li>
+<li>退出进程<ol>
+<li>强制退出当前进程 ctrl + c</li>
+<li>退出指定进程 kill -15 [pid]</li>
+<li>强杀一个进程 kill -9 [pid]</li>
+</ol>
+</li>
+<li>执行shell脚本文件（.sh为后缀）步骤：<ol>
+<li>chmod a+x [name].sh      # makes the script”name.sh” executable</li>
+<li>./[name].sh     #execute the sccript</li>
+</ol>
+</li>
+<li>[command A] ; [command B] 执行完A后执行B，无论A是否执行成功</li>
+<li>[command A] &amp;&amp; [command B] 执行A，当A执行成功后才执行B<h2 id="四、输出"><a href="#四、输出" class="headerlink" title="四、输出"></a>四、输出</h2></li>
+<li>echo 输出到屏幕上(会在输出的最后一行加上一个新的空行)</li>
+<li>printf 输出到屏幕上(不会添加空行)</li>
+<li>cat  Concatenate to screen</li>
+</ul>
+</blockquote>
+<h2 id="五、其它"><a href="#五、其它" class="headerlink" title="五、其它"></a>五、其它</h2><blockquote>
+<ul>
+<li>查看本机ip: ifconfig -a</li>
 <li>自动补全文件或文件名  输入文件或文件名的前一个或几个字符按tab键</li>
 <li>一键擦除当前行的录入信息  ctrl + u</li>
-<li>显示前一次（或后一次）执行的命令 ↑（后一次↓）</li>
-<li>清空当前屏幕 clear</li>
+<li>切换前后两个单词  按Esc键 再按T键</li>
+<li>reset  Resets the terminal display</li>
+<li>pbcopy &lt; [file]  Copies file contents to clipboard</li>
+<li>pbpaste    Paste clipboard contents</li>
+<li>pbpaste &gt; [file]  Past clipboard contents into file, pbpaste &gt; paste-test.txt</li>
 </ul>
+</blockquote>
 
       
     </div>
@@ -574,7 +633,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、文件与文件夹操作"><span class="nav-number">1.</span> <span class="nav-text">一、文件与文件夹操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、进入文件目录"><span class="nav-number">1.1.</span> <span class="nav-text">1、进入文件目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、查看目录文件信息"><span class="nav-number">1.2.</span> <span class="nav-text">2、查看目录文件信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、创建删除文件与文件夹"><span class="nav-number">1.3.</span> <span class="nav-text">3、创建删除文件与文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、加快命令操作速度的快捷键"><span class="nav-number">1.4.</span> <span class="nav-text">3、加快命令操作速度的快捷键</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、基本知识"><span class="nav-number">1.</span> <span class="nav-text">一、基本知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、文件与文件夹操作"><span class="nav-number">2.</span> <span class="nav-text">二、文件与文件夹操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、进入文件目录"><span class="nav-number">2.1.</span> <span class="nav-text">1、进入文件目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、查看目录文件信息"><span class="nav-number">2.2.</span> <span class="nav-text">2、查看目录文件信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、创建删除文件与文件夹"><span class="nav-number">2.3.</span> <span class="nav-text">3、创建删除文件与文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、移动拷贝文件"><span class="nav-number">2.4.</span> <span class="nav-text">4、移动拷贝文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、指令与程序操作"><span class="nav-number">3.</span> <span class="nav-text">三、指令与程序操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、输出"><span class="nav-number">4.</span> <span class="nav-text">四、输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、其它"><span class="nav-number">5.</span> <span class="nav-text">五、其它</span></a></li></ol></div>
             
           </div>
         </section>
