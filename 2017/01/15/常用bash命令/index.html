@@ -87,16 +87,16 @@
 <meta name="description" content="一、基本知识
 
 “~”在shell中代表home目录
-“..”代表上一级目录
-“.”代表当前目录
+“..”为上一级目录的链接
+“.”为当前目录的链接
 文件名以“.”开头的为隐藏文件
 查看当前目录路径 pwd (print working directory 的简写)
 
 
 二、文件与文件夹操作1、进入文件目录
 
-根据相对路径（相对当前路径）进入一个目录  cd folderName/subfolderName/
-根据绝对路径进入一个目录 cd /fo">
+根据相对路径（相对当前路径）进入一个目录 cd folderName/subfolderName/
+根据绝对路径进入一个目录 cd">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用bash命令">
 <meta property="og:url" content="https://zenghaifei.github.io/2017/01/15/常用bash命令/index.html">
@@ -104,32 +104,32 @@
 <meta property="og:description" content="一、基本知识
 
 “~”在shell中代表home目录
-“..”代表上一级目录
-“.”代表当前目录
+“..”为上一级目录的链接
+“.”为当前目录的链接
 文件名以“.”开头的为隐藏文件
 查看当前目录路径 pwd (print working directory 的简写)
 
 
 二、文件与文件夹操作1、进入文件目录
 
-根据相对路径（相对当前路径）进入一个目录  cd folderName/subfolderName/
-根据绝对路径进入一个目录 cd /fo">
-<meta property="og:updated_time" content="2017-01-16T14:57:12.000Z">
+根据相对路径（相对当前路径）进入一个目录 cd folderName/subfolderName/
+根据绝对路径进入一个目录 cd">
+<meta property="og:updated_time" content="2017-01-16T15:24:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用bash命令">
 <meta name="twitter:description" content="一、基本知识
 
 “~”在shell中代表home目录
-“..”代表上一级目录
-“.”代表当前目录
+“..”为上一级目录的链接
+“.”为当前目录的链接
 文件名以“.”开头的为隐藏文件
 查看当前目录路径 pwd (print working directory 的简写)
 
 
 二、文件与文件夹操作1、进入文件目录
 
-根据相对路径（相对当前路径）进入一个目录  cd folderName/subfolderName/
-根据绝对路径进入一个目录 cd /fo">
+根据相对路径（相对当前路径）进入一个目录 cd folderName/subfolderName/
+根据绝对路径进入一个目录 cd">
 
 
 
@@ -332,80 +332,81 @@
         <h2 id="一、基本知识"><a href="#一、基本知识" class="headerlink" title="一、基本知识"></a>一、基本知识</h2><blockquote>
 <ul>
 <li>“~”在shell中代表home目录</li>
-<li>“..”代表上一级目录</li>
-<li>“.”代表当前目录</li>
+<li>“..”为上一级目录的链接</li>
+<li>“.”为当前目录的链接</li>
 <li>文件名以“.”开头的为隐藏文件</li>
 <li>查看当前目录路径 pwd (print working directory 的简写)</li>
 </ul>
 </blockquote>
 <h2 id="二、文件与文件夹操作"><a href="#二、文件与文件夹操作" class="headerlink" title="二、文件与文件夹操作"></a>二、文件与文件夹操作</h2><h3 id="1、进入文件目录"><a href="#1、进入文件目录" class="headerlink" title="1、进入文件目录"></a>1、进入文件目录</h3><blockquote>
 <ul>
-<li>根据相对路径（相对当前路径）进入一个目录  cd folderName/subfolderName/</li>
-<li>根据绝对路径进入一个目录 cd /folderName/subfolderName/</li>
-<li>返回上一级或多级目录 cd ..(cd ../..)</li>
-<li>进入home目录 cd</li>
-<li>返回上一次目录跳转前所在目录 cd -</li>
+<li>根据相对路径（相对当前路径）进入一个目录 <code>cd folderName/subfolderName/</code></li>
+<li>根据绝对路径进入一个目录 <code>cd /folderName/subfolderName/</code></li>
+<li>返回上一级或多级目录 <code>cd ..</code>(cd ../..)</li>
+<li>进入home目录 <code>cd</code></li>
+<li>返回上一次目录跳转前所在目录 <code>cd -</code></li>
 </ul>
 </blockquote>
 <h3 id="2、查看目录文件信息"><a href="#2、查看目录文件信息" class="headerlink" title="2、查看目录文件信息"></a>2、查看目录文件信息</h3><blockquote>
 <ul>
-<li>列出当前目录的所有可见文件名 ls （”ls”代表单词“list”）</li>
-<li>列出当前目录下的所有文件名（含隐藏文件） ls -a （”-a”代表“all”）</li>
-<li>详细列出当前目录下的所有可见文件信息 ls -l (“-l”代表“long”)</li>
-<li>递归列出当前目录下的所有可见文件及文件夹下的文件 ls -R</li>
-<li>用系统默认软件打开当前目录下的一个文件 open [fileName]</li>
+<li>列出当前目录的所有可见文件名 <code>ls</code>（”ls”代表单词“list”）</li>
+<li>列出当前目录的所有可见文件名并以最近修改时间排序  <code>ls -t</code></li>
+<li>列出当前目录下的所有文件名（含隐藏文件）<code>ls -a</code> （”-a”代表“all”）</li>
+<li>详细列出当前目录下的所有可见文件信息 <code>ls -l</code> (“-l”代表“long”)</li>
+<li>递归列出当前目录下的所有可见文件及文件夹下的文件 <code>ls -R</code></li>
+<li>用系统默认软件打开当前目录下的一个文件 <code>open [fileName]</code></li>
 <li>用指定软件打开一个文件 [softwareName] [fileName] 如：用vim打开当前目录下的text.txt文件vi test.txt</li>
 </ul>
 </blockquote>
 <h3 id="3、创建删除文件与文件夹"><a href="#3、创建删除文件与文件夹" class="headerlink" title="3、创建删除文件与文件夹"></a>3、创建删除文件与文件夹</h3><blockquote>
 <ul>
-<li>创建一个新的文件夹（当前目录下）  mkdir [fileName]  （”make directory”的简写）</li>
+<li>创建一个新的文件夹（当前目录下） <code>mkdir [fileName]</code>  （”make directory”的简写）</li>
 <li>删除一个文件夹（当前目录下）<ol>
-<li>删除一个空文件夹：rm -r [folderName]   （”rm”为”remove”的简写,“-r”代表单词“recursive”）</li>
-<li>递归删除一个文件夹（一个个需要确认） rm -ri [folderName] （其中“-i”代表单词“inspect”）</li>
-<li>强制删除一个文件夹 rm -rf [folderName] (“-rf”中的“f”代表单词“force”)</li>
+<li>删除一个空文件夹：<code>rm -r [folderName]</code>  （”rm”为”remove”的简写,“-r”代表单词“recursive”）</li>
+<li>递归删除一个文件夹（一个个需要确认） <code>rm -ri [folderName]</code> （其中“-i”代表单词“inspect”）</li>
+<li>强制删除一个文件夹 <code>rm -rf [folderName]</code> (“-rf”中的“f”代表单词“force”)</li>
 </ol>
 </li>
-<li>创建一个新的文件(当前目录下) touch [fileName]</li>
+<li>创建一个新的空文件(当前目录下) <code>touch [fileName]</code></li>
 <li>删除一个文件(当前目录下)<ol>
-<li>删除一个文件 rm [fileName]</li>
-<li>需要确认的方式删除一个文件 rm -i [fileName]</li>
-<li>强制删除一个文件 rm -f [fileName]</li>
+<li>删除一个文件 <code>rm [fileName]</code></li>
+<li>需要确认的方式删除一个文件 <code>rm -i [fileName]</code></li>
+<li>强制删除一个文件 <code>rm -f [fileName]</code></li>
 </ol>
 </li>
 </ul>
 </blockquote>
 <h3 id="4、移动拷贝文件"><a href="#4、移动拷贝文件" class="headerlink" title="4、移动拷贝文件"></a>4、移动拷贝文件</h3><blockquote>
 <ul>
-<li>在当前目录下复制一个文件为新的文件名 cp [file] [newfile]</li>
-<li>复制一个文件到指定目录 cp [file] [dir] (其中dir可以是相对路径，也可以是绝对路径)</li>
-<li>重命名一个文件 mv [fileName] [new filename]</li>
+<li>在当前目录下复制一个文件为新的文件名 <code>cp [file] [newfile]</code></li>
+<li>复制一个文件到指定目录 <code>cp [file] [dir]</code> (其中dir可以是相对路径，也可以是绝对路径)</li>
+<li>重命名一个文件 <code>mv [fileName] [new filename]</code></li>
 <li>移动一个文件到一个文件夹<ol>
-<li>mv [fileName] [dir]  (目标文件夹含同名文件直接覆盖)</li>
-<li>mv -i [fileName] [dir] (目标文件夹含同名文件提醒是否覆盖)</li>
+<li><code>mv [fileName] [dir]</code>  (目标文件夹含同名文件直接覆盖)</li>
+<li><code>mv -i [fileName] [dir]</code> (目标文件夹含同名文件提醒是否覆盖)</li>
 </ol>
 </li>
 </ul>
 </blockquote>
 <h2 id="三、指令与程序操作"><a href="#三、指令与程序操作" class="headerlink" title="三、指令与程序操作"></a>三、指令与程序操作</h2><blockquote>
 <ul>
-<li>以管理员权限执行一个命令 sudo [command]  (“sudo”代表“super user do”)</li>
-<li>后台执行一条命令 [command] &amp;</li>
-<li>后台执行一条命令，并使其在session断开后依然执行  nohup [commandName] &amp;<br>“nohup ”代表“no hang up ”, 如：nohup java -jar XXX.jar &amp; 代表在后台一直执行一个jar包<br><strong>注：通常在shell中执行的后台运行程序在session结束后就自动关闭了，如果需要session后程序依然在后台执行，则加上”nohup”</strong></li>
+<li>以管理员权限执行一个命令 <code>sudo [command]</code> (“sudo”代表“super user do”)</li>
+<li>后台执行一条命令 <code>[command] &amp;</code></li>
+<li>后台执行一条命令，并使其在session断开后依然执行  <code>nohup [commandName] &amp;</code><br>“nohup ”代表“no hang up ”, 如：nohup java -jar XXX.jar &amp; 代表在后台一直执行一个jar包<br><strong>注：通常在shell中执行的后台运行程序在session结束后就自动关闭了，如果需要session结束后程序依然在后台执行，则加上”nohup”</strong></li>
 <li>显示前一次（或后一次）执行的命令 ↑（后一次↓）</li>
-<li>显示最后的n条历史命令 history [n]</li>
-<li>交互式的搜索历史指令 ctrl r</li>
-<li>查看程序或指令是否在运行：ps -ef|grep [commandName] （支持名称的部分匹配，展示的结果第二列的数字为pid）</li>
+<li>显示最后的n条历史命令 <code>history [n]</code></li>
+<li>交互式的搜索历史指令 <code>ctrl r</code></li>
+<li>查看程序或指令是否在运行：<code>ps -ef|grep [commandName]</code>（支持名称的部分匹配，展示的结果第二列的数字为pid）</li>
 <li>显示当前正在后台运行的进程：top （按q退出）</li>
 <li>退出进程<ol>
-<li>强制退出当前进程 ctrl + c</li>
-<li>退出指定进程 kill -15 [pid]</li>
-<li>强杀一个进程 kill -9 [pid]</li>
+<li>强制退出当前进程 <code>ctrl + c</code></li>
+<li>退出指定进程 <code>kill -15 [pid]</code></li>
+<li>强杀一个进程 <code>kill -9 [pid]</code></li>
 </ol>
 </li>
 <li>执行shell脚本文件（.sh为后缀）步骤：<ol>
-<li>chmod a+x [name].sh      # makes the script”name.sh” executable</li>
-<li>./[name].sh     #execute the sccript</li>
+<li>使脚本可执行：<code>chmod a+x [name].sh</code></li>
+<li>执行脚本： <code>./[name].sh</code></li>
 </ol>
 </li>
 <li>[command A] ; [command B] 执行完A后执行B，无论A是否执行成功</li>
