@@ -114,7 +114,7 @@
 
 根据相对路径（相对当前路径）进入一个目录 cd folderName/subfolderName/
 根据绝对路径进入一个目录 cd">
-<meta property="og:updated_time" content="2017-01-17T00:33:30.000Z">
+<meta property="og:updated_time" content="2017-01-17T00:35:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用bash命令">
 <meta name="twitter:description" content="一、基本知识
@@ -352,17 +352,15 @@
 <li>列出当前目录的所有可见文件名 <code>ls</code>（”ls”代表单词“list”）</li>
 <li>列出当前目录的所有可见文件名并以最近修改时间排序  <code>ls -t</code></li>
 <li>列出当前目录下的所有文件名（含隐藏文件）<code>ls -a</code> （”-a”代表“all”）</li>
+<li>参数可以叠加使用，如ls -alt 代表的是“-a，-l，-t”的叠加效果</li>
+<li>递归列出当前目录下的所有可见文件及文件夹下的文件 <code>ls -R</code></li>
+<li>用系统默认软件打开当前目录下的一个文件 <code>open [fileName]</code></li>
+<li>用指定软件打开一个文件 [softwareName] [fileName] 如：用vim打开当前目录下的text.txt文件vi test.txt</li>
 <li>详细列出当前目录下的所有可见文件信息 <code>ls -l</code> (“-l”代表“long”)<br>“-l”选项将文件信息像表格一样的列出，如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">-rw-r--r--  1 colin  staff  40 Jan 16 21:44  1.txt</div><div class="line">-rw-r--r--  1 colin  staff  40 Jan 16 23:32  2.txt</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </blockquote>
 <p>  其中第二列代表该文件夹或文件所包含的子文件夹和文件的个数（包含了“..”与“.”两个链接）,第三列代表该文件的拥有者,第四列代表拥有该文件的组,第五列代表文件的大小，单位为byte（字节）,第六列（如：“40 Jan 16 21:44”）代表文件最后修改的时间</p>
-<ul>
-<li>参数可以叠加使用，如ls -alt 代表的是“-a，-l，-t”的叠加效果</li>
-<li>递归列出当前目录下的所有可见文件及文件夹下的文件 <code>ls -R</code></li>
-<li>用系统默认软件打开当前目录下的一个文件 <code>open [fileName]</code></li>
-<li>用指定软件打开一个文件 [softwareName] [fileName] 如：用vim打开当前目录下的text.txt文件vi test.txt</li>
-</ul>
 <h3 id="3、创建删除文件与文件夹"><a href="#3、创建删除文件与文件夹" class="headerlink" title="3、创建删除文件与文件夹"></a>3、创建删除文件与文件夹</h3><blockquote>
 <ul>
 <li>创建一个新的文件夹（当前目录下） <code>mkdir [fileName]</code>  （”make directory”的简写）</li>
