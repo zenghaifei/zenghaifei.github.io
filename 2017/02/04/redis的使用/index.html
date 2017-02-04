@@ -100,7 +100,7 @@ redis-cli连接redis: $ redis-cli -h ipAdd">
 bash中启动redis服务: $ redis-server /usr/local/etc/redis.conf
 命令行中关闭redis: $ redis-cli shutdown save|nosave
 redis-cli连接redis: $ redis-cli -h ipAdd">
-<meta property="og:updated_time" content="2017-02-04T15:34:36.000Z">
+<meta property="og:updated_time" content="2017-02-04T15:38:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis的使用">
 <meta name="twitter:description" content="启动与连接redis-cli是一个管理redis的命令行交互工具，使用它便可以直接在命令行中连接操作redis了
@@ -323,7 +323,7 @@ redis-cli连接redis: $ redis-cli -h ipAdd">
 <li>删除当前连接redis库的所有key：$ redis-cli flushdb</li>
 </ul>
 </blockquote>
-<h2 id="基本存储规范"><a href="#基本存储规范" class="headerlink" title="基本存储规范"></a>基本存储规范</h2><blockquote>
+<h2 id="key命名规范"><a href="#key命名规范" class="headerlink" title="key命名规范"></a>key命名规范</h2><blockquote>
 <ul>
 <li>key应具有良好的可阅读性</li>
 <li>key不宜太长，否则存储时耗空间与带宽资源，大大降低效率</li>
@@ -620,7 +620,7 @@ redis-cli连接redis: $ redis-cli -h ipAdd">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#启动与连接"><span class="nav-number">1.</span> <span class="nav-text">启动与连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理命令"><span class="nav-number">2.</span> <span class="nav-text">管理命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本存储规范"><span class="nav-number">3.</span> <span class="nav-text">基本存储规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#几种基本存储结构"><span class="nav-number">4.</span> <span class="nav-text">几种基本存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串String"><span class="nav-number">4.1.</span> <span class="nav-text">字符串String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链表list"><span class="nav-number">4.2.</span> <span class="nav-text">链表list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无序集合set"><span class="nav-number">4.3.</span> <span class="nav-text">无序集合set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#入栈即时排序的有序集合zset"><span class="nav-number">4.4.</span> <span class="nav-text">入栈即时排序的有序集合zset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“键中键”与面向对象式存储——哈希hash"><span class="nav-number">4.5.</span> <span class="nav-text">“键中键”与面向对象式存储——哈希hash</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#启动与连接"><span class="nav-number">1.</span> <span class="nav-text">启动与连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理命令"><span class="nav-number">2.</span> <span class="nav-text">管理命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#key命名规范"><span class="nav-number">3.</span> <span class="nav-text">key命名规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#几种基本存储结构"><span class="nav-number">4.</span> <span class="nav-text">几种基本存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串String"><span class="nav-number">4.1.</span> <span class="nav-text">字符串String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链表list"><span class="nav-number">4.2.</span> <span class="nav-text">链表list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无序集合set"><span class="nav-number">4.3.</span> <span class="nav-text">无序集合set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#入栈即时排序的有序集合zset"><span class="nav-number">4.4.</span> <span class="nav-text">入栈即时排序的有序集合zset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“键中键”与面向对象式存储——哈希hash"><span class="nav-number">4.5.</span> <span class="nav-text">“键中键”与面向对象式存储——哈希hash</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
