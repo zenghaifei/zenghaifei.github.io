@@ -114,7 +114,7 @@
 
 根据相对路径（相对当前路径）进入一个目录 cd folderName/subfolderName/
 根据绝对路径进入一个目录 cd">
-<meta property="og:updated_time" content="2017-01-17T15:21:35.000Z">
+<meta property="og:updated_time" content="2017-02-04T01:57:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用bash命令">
 <meta name="twitter:description" content="一、基本知识
@@ -427,20 +427,35 @@
 </ol>
 </li>
 <li>重定向输入 “&lt;”, 如：cat &lt; lakes.txt 将lakes.txt作为输入源重定向给cat程序</li>
+<li>pbcopy &lt; [file]  复制文件内容到剪贴板</li>
+<li>pbpaste  粘贴剪贴板内容</li>
+<li>pbpaste &gt; [file]  粘贴剪贴板内容到一个文件中，如：pbpaste &gt; paste-test.txt</li>
 <li><strong>管道“|”——连接一个程序的输出到另一个程序的输入</strong><br>如：<code>cat 1.txt | wc | cat &gt; islands.txt</code>，将cat 1.txt的输出连接为wc的输入源，再将wc的输出作为输入源连接到cat命令</li>
 </ul>
 </blockquote>
-<h2 id="五、其它"><a href="#五、其它" class="headerlink" title="五、其它"></a>五、其它</h2><blockquote>
+<h2 id="五、文本内容的搜索与替换"><a href="#五、文本内容的搜索与替换" class="headerlink" title="五、文本内容的搜索与替换"></a>五、文本内容的搜索与替换</h2><p>【搜索】grep为”global regular expression print”的简写，它按模式（正则表达式）搜索匹配的行并返回结果，搜索默认是大小写敏感的（如需大小写不敏感则加上参数 -i, 即”insensitive”）</p>
+<blockquote>
+<ul>
+<li><code>grep [keyword] [fileName]</code>从指定文件中搜索关键字，如：<code>grep Mount mountains.txt</code>为从当前文件目录下的mountains.txt文件中搜索“Mount”关键字</li>
+<li><code>grep -i [keyword] [fileName]</code>从指定文件中搜索关键字（大小写不敏感）</li>
+<li><code>grep -R [keyword] [directory]</code> 从指定目录下的所有文件中（含子目录）递归搜索关键字，其中-R代表“recursive”</li>
+<li><code>grep -Rl [keyword] [directory]</code> 从指定目录下递归列出所有内容包含有关键字的文件</li>
+</ul>
+</blockquote>
+<p>【替换】sed为”stream editor”的简写，是一个非交互式的流编辑器</p>
+<blockquote>
+<ul>
+<li>替换第一个关键字 <code>sed &#39;s/snow/rain/&#39; forests.txt</code> 表达式中’s’代表”substitution”在用于替换时是固定的该格式, ‘snow’为在文件中要替换的关键字，’rain’为替换关键字</li>
+<li>替换所有匹配关键字 <code>sed &#39;s/snow/rain/g&#39; forests.txt</code></li>
+</ul>
+</blockquote>
+<h2 id="六、其它"><a href="#六、其它" class="headerlink" title="六、其它"></a>六、其它</h2><blockquote>
 <ul>
 <li>查看本机ip: ifconfig -a</li>
 <li>自动补全文件或文件名  输入文件或文件名的前一个或几个字符按tab键</li>
 <li>一键擦除当前行的录入信息  ctrl + u</li>
 <li>切换前后两个单词  按Esc键 再按T键</li>
 <li>让bash不用重启就让更改的配置在当前session生效 <code>source ~/.bash_profile</code></li>
-<li>reset  Resets the terminal display</li>
-<li>pbcopy &lt; [file]  Copies file contents to clipboard</li>
-<li>pbpaste    Paste clipboard contents</li>
-<li>pbpaste &gt; [file]  Past clipboard contents into file, pbpaste &gt; paste-test.txt</li>
 </ul>
 </blockquote>
 
@@ -665,7 +680,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、基本知识"><span class="nav-number">1.</span> <span class="nav-text">一、基本知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、文件与文件夹操作"><span class="nav-number">2.</span> <span class="nav-text">二、文件与文件夹操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、进入文件目录"><span class="nav-number">2.1.</span> <span class="nav-text">1、进入文件目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、查看目录文件信息"><span class="nav-number">2.2.</span> <span class="nav-text">2、查看目录文件信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、创建删除文件与文件夹"><span class="nav-number">2.3.</span> <span class="nav-text">3、创建删除文件与文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、移动拷贝文件"><span class="nav-number">2.4.</span> <span class="nav-text">4、移动拷贝文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、指令与程序操作"><span class="nav-number">3.</span> <span class="nav-text">三、指令与程序操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、输入输出与重定向"><span class="nav-number">4.</span> <span class="nav-text">四、输入输出与重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、其它"><span class="nav-number">5.</span> <span class="nav-text">五、其它</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、基本知识"><span class="nav-number">1.</span> <span class="nav-text">一、基本知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、文件与文件夹操作"><span class="nav-number">2.</span> <span class="nav-text">二、文件与文件夹操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、进入文件目录"><span class="nav-number">2.1.</span> <span class="nav-text">1、进入文件目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、查看目录文件信息"><span class="nav-number">2.2.</span> <span class="nav-text">2、查看目录文件信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、创建删除文件与文件夹"><span class="nav-number">2.3.</span> <span class="nav-text">3、创建删除文件与文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、移动拷贝文件"><span class="nav-number">2.4.</span> <span class="nav-text">4、移动拷贝文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、指令与程序操作"><span class="nav-number">3.</span> <span class="nav-text">三、指令与程序操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、输入输出与重定向"><span class="nav-number">4.</span> <span class="nav-text">四、输入输出与重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、文本内容的搜索与替换"><span class="nav-number">5.</span> <span class="nav-text">五、文本内容的搜索与替换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、其它"><span class="nav-number">6.</span> <span class="nav-text">六、其它</span></a></li></ol></div>
             
           </div>
         </section>
