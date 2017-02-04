@@ -100,7 +100,7 @@ redis-cli连接redis: $ redis-cli -h ipAd">
 
 命令行中关闭redis: $ redis-cli shutdown save|nosave
 redis-cli连接redis: $ redis-cli -h ipAd">
-<meta property="og:updated_time" content="2017-02-04T15:26:27.000Z">
+<meta property="og:updated_time" content="2017-02-04T15:30:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis的使用">
 <meta name="twitter:description" content="启动与连接redis-cli是一个管理redis的命令行交互工具，使用它便可以直接在命令行中连接操作redis了
@@ -313,17 +313,25 @@ redis-cli连接redis: $ redis-cli -h ipAd">
 <p>-bash中启动redis服务: $ redis-server /usr/local/etc/redis.conf</p>
 <ul>
 <li>命令行中关闭redis: $ redis-cli shutdown save|nosave</li>
-<li>redis-cli连接redis: $ redis-cli -h ipAddress -p port<h2 id="管理命令"><a href="#管理命令" class="headerlink" title="管理命令"></a>管理命令</h2></li>
+<li>redis-cli连接redis: $ redis-cli -h ipAddress -p port</li>
+</ul>
+</blockquote>
+<h2 id="管理命令"><a href="#管理命令" class="headerlink" title="管理命令"></a>管理命令</h2><blockquote>
+<ul>
 <li>查看按通配符匹配的所有key: <code>KEYS pattern</code>,其中pattern的匹配方式为通配符匹配</li>
 <li>bgsave 将缓存中的数据以RDB文件的形式持久化到硬盘中（注意其与save命令的差别，前者是不阻塞式的在后台保存，redis依然对外提供服务，后者是阻塞式的保存）</li>
-<li>删除当前连接redis库的所有key：$ redis-cli flushdb<h2 id="基本存储规范"><a href="#基本存储规范" class="headerlink" title="基本存储规范"></a>基本存储规范</h2></li>
+<li>删除当前连接redis库的所有key：$ redis-cli flushdb</li>
+</ul>
+</blockquote>
+<h2 id="基本存储规范"><a href="#基本存储规范" class="headerlink" title="基本存储规范"></a>基本存储规范</h2><blockquote>
+<ul>
 <li>key应具有良好的可阅读性</li>
 <li>key不宜太长，否则存储时耗空间与带宽资源，大大降低效率</li>
 <li>用“：”作为key名称的分割符（或“.”、“／”，也偶尔用“|“）</li>
-<li>坚持始终一致的一种key命名风格<h2 id="几种基本存储结构"><a href="#几种基本存储结构" class="headerlink" title="几种基本存储结构"></a>几种基本存储结构</h2></li>
+<li>坚持始终一致的一种key命名风格</li>
 </ul>
 </blockquote>
-<p>与存储的结构类型无关的通用key操作与规则：</p>
+<h2 id="几种基本存储结构"><a href="#几种基本存储结构" class="headerlink" title="几种基本存储结构"></a>几种基本存储结构</h2><p>与存储的结构类型无关的通用key操作与规则：</p>
 <blockquote>
 <ul>
 <li>删除一个键值对： <code>DEL key</code></li>
