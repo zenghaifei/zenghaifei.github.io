@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="字面上看，数据与文明似乎属于两个风马牛不相及的话题，在专家们的眼中这明显就是分属于信息与历史的范畴。但在一个没有条条框框的人眼中，界限并不存在，世间万物本身并不划分范畴，只是因为人的认知能力的原因我们给不同类型的问题人为划分成了不同的学科，最终不同专业视角下看到的世界只是世界的不同侧面而已，认清世界的本来面目才是目的，因而为了看到世界更清晰的面貌，那些不常见的视角便显得尤为珍贵，我们不妨试着用数据">
+<meta name="description" content="在程序开发的过程中，DRP即“don’t repeat yourself”是一个基本的编码原则，在需要多处重复使用一段代码的情况下，“复制粘贴”是一个糟糕的选择，一方面代码繁杂冗余，另一方面，这种冗余的代码的维护便是一个大问题（改动需要一处处的找出来改，既费时又很容易产生新的错误），而在软件开发中需求频繁变动是常态，因而代码的复用显得至关重要。在java中代码的复用方式有两种：一种是将重复使用的代">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据与文明">
-<meta property="og:url" content="https://zenghaifei.github.io/2016/08/15/数据与文明/index.html">
+<meta property="og:title" content="Spring Aop处理机制与运用">
+<meta property="og:url" content="https://zenghaifei.github.io/2017/02/17/Spring-Aop处理机制与运用/index.html">
 <meta property="og:site_name" content="悠河">
-<meta property="og:description" content="字面上看，数据与文明似乎属于两个风马牛不相及的话题，在专家们的眼中这明显就是分属于信息与历史的范畴。但在一个没有条条框框的人眼中，界限并不存在，世间万物本身并不划分范畴，只是因为人的认知能力的原因我们给不同类型的问题人为划分成了不同的学科，最终不同专业视角下看到的世界只是世界的不同侧面而已，认清世界的本来面目才是目的，因而为了看到世界更清晰的面貌，那些不常见的视角便显得尤为珍贵，我们不妨试着用数据">
-<meta property="og:updated_time" content="2016-08-23T15:23:14.000Z">
+<meta property="og:description" content="在程序开发的过程中，DRP即“don’t repeat yourself”是一个基本的编码原则，在需要多处重复使用一段代码的情况下，“复制粘贴”是一个糟糕的选择，一方面代码繁杂冗余，另一方面，这种冗余的代码的维护便是一个大问题（改动需要一处处的找出来改，既费时又很容易产生新的错误），而在软件开发中需求频繁变动是常态，因而代码的复用显得至关重要。在java中代码的复用方式有两种：一种是将重复使用的代">
+<meta property="og:updated_time" content="2017-02-17T12:58:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据与文明">
-<meta name="twitter:description" content="字面上看，数据与文明似乎属于两个风马牛不相及的话题，在专家们的眼中这明显就是分属于信息与历史的范畴。但在一个没有条条框框的人眼中，界限并不存在，世间万物本身并不划分范畴，只是因为人的认知能力的原因我们给不同类型的问题人为划分成了不同的学科，最终不同专业视角下看到的世界只是世界的不同侧面而已，认清世界的本来面目才是目的，因而为了看到世界更清晰的面貌，那些不常见的视角便显得尤为珍贵，我们不妨试着用数据">
+<meta name="twitter:title" content="Spring Aop处理机制与运用">
+<meta name="twitter:description" content="在程序开发的过程中，DRP即“don’t repeat yourself”是一个基本的编码原则，在需要多处重复使用一段代码的情况下，“复制粘贴”是一个糟糕的选择，一方面代码繁杂冗余，另一方面，这种冗余的代码的维护便是一个大问题（改动需要一处处的找出来改，既费时又很容易产生新的错误），而在软件开发中需求频繁变动是常态，因而代码的复用显得至关重要。在java中代码的复用方式有两种：一种是将重复使用的代">
 
 
 
@@ -114,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="https://zenghaifei.github.io/2016/08/15/数据与文明/"/>
+  <link rel="canonical" href="https://zenghaifei.github.io/2017/02/17/Spring-Aop处理机制与运用/"/>
 
-  <title> 数据与文明 | 悠河 </title>
+  <title> Spring Aop处理机制与运用 | 悠河 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +246,7 @@
             
             
               
-                数据与文明
+                Spring Aop处理机制与运用
               
             
           </h1>
@@ -258,8 +258,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-15T20:47:29+08:00" content="2016-08-15">
-              2016-08-15
+            <time itemprop="dateCreated" datetime="2017-02-17T20:35:42+08:00" content="2017-02-17">
+              2017-02-17
             </time>
           </span>
 
@@ -269,8 +269,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/15/数据与文明/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/15/数据与文明/" itemprop="commentsCount"></span>
+                <a href="/2017/02/17/Spring-Aop处理机制与运用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/17/Spring-Aop处理机制与运用/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -293,13 +293,51 @@
       
 
       
-        <p>字面上看，数据与文明似乎属于两个风马牛不相及的话题，在专家们的眼中这明显就是分属于信息与历史的范畴。但在一个没有条条框框的人眼中，界限并不存在，世间万物本身并不划分范畴，只是因为人的认知能力的原因我们给不同类型的问题人为划分成了不同的学科，最终不同专业视角下看到的世界只是世界的不同侧面而已，认清世界的本来面目才是目的，因而为了看到世界更清晰的面貌，那些不常见的视角便显得尤为珍贵，我们不妨试着用数据的视角来再看一遍人类的文明历程。</p>
-<p>文明是一个略为抽象的概念，弄清一个概念的好办法之一就是弄清它的反面。“文明”的反面是“野蛮”，对应指的是落后的动物性，因而反过来看，文明指的便是与“原始”、“未开化”这些词的反面，也就是人类所有相对与动物的进步方面了；概括的来说大体包括语言、文字、风俗、制度、技术这些范畴。再进一步分析，所谓的文明不正是人类在与环境的交互过程中所积累下来的习惯、经验与知识吗？这就是明明白白的数据呀！只不过这些数据不是存储在计算机的硬盘上，而是存储在一代又一代人的大脑中（支撑整个社会运行）。因而，在数据的视角下，所谓的文明又可以定义为：人类在与环境的交互过程中大脑里所积累的有效数据总和！是不是脑洞大开？我们可以用数据的视角再切换到人类历史上的几个关键节点上。</p>
-<p>自人类从东非大裂谷开始直立行走以来，影响人类最深远的一个节点（也是第一个节点）是农业革命，在7万年前，智人还不过是一种微不足道的动物（是的，真是动物），在非洲的角落自顾自地生活，靠打猎与采集为生（像《动物世界》里的动物一样只是食物链中的一环）。直到大约1万年前，情形开始有些改变，智人在长期的采集、打猎过程中积累了大量的关于植物与动物的数据存储在大脑中，量变产生质变，有一天一只智猿（应该是一只母的，而且是有偷懒想法的）面对日益严峻的同类竞争压力，在垂头丧气之际于自家草棚的不远处忽然有了新发现，自己前段时间洒落的一些采摘的草籽既然长出了新芽！她已经多次的发现了这个现象，但这一次不一样，这回她意识到可以靠长大的幼苗长出吃的东西来，免去跑到遥远的地方进行采摘的风险，于是这只智猿开始独自试验她的猜想，过了一两年她的猜想多次应验之后，她的部落也开始好奇的跟着进行着这项试验，悄无声息而又意义深远的农业革命就此开始了！人类由此开始在一定程度上跳出了食物链的自然法则，像造物主一样开始“创造”食物了！这一次的经验数据的积累、挖掘从根本上改变了人类走向，是数据历史上的一次最伟大变现，让人类与其他的高级动物产生了分野。</p>
-<p>人类发展的第二个重大节点是文字的发明。在文字诞生之前，人类的数据存储技术就只有天生的大脑，非常的原始，而且数据太容易丢失！记忆的遗忘倒在其次，由于数据的传输技术只有非常低效的口口相传，于是每一代大脑积累的数据都在死亡之后大量的丢失，问题非常严峻！文字诞生后，仅仅依赖于大脑的数据流失问题有了许多改善，人类开始在石壁上、甲骨上、竹简上记录简单的信息，但这种存储元器件不够好用，数据信息难以迁移，大量的使用问题重重！为了解决记忆、知识的存储的技术难题，若干年后人类发明了纸与印刷术，由于纸可存储的信息容量大，便携性非常好，而且可保存时间长，非常便于传播，因而人类在与环境的交互中观察到的经验、思考以及思考后的知识可以极大的保存与传播下来，各种优秀的思想交互传播（如：印刷术的发明使《圣经》得以广泛传播，对欧洲的宗教改革产生巨大影响）、影响和沉淀，各种对自然的观测经验得以收集，人类由此整体进入了知识沉淀与社会发展的大爆发期。</p>
-<p>人类发展的第三个重大节点是西欧近代三大思想解放运动。文艺复兴诞生了莎士比亚、达芬奇、但丁这样的大家，当时的人在意识上开始肯定人本身的地位（相较于黑暗中世纪时期神的绝对地位）；宗教改革运动诞生了新教，极大的减弱了宗教势力对世俗生活的干涉，人民也开始相对理性的看待人与宗教之间的关系；启蒙运动让人们开始理性的思考王权与政权的合法性，并轰轰烈烈的进行着社会化实验，由此产生了现代的政治观念与“国家”的概念。三大运动扫除了宗教对人行动与思想的桎梏，也推倒了王权的迷信，让人真正在神权与王权的枷锁之中解放出来，并开始推崇科学与理性，间接导致了欧洲在人文、科学、政治等各个领域理论思想的空前爆发（也许是人类历史上思想成果最为丰硕的时期）。人类开始大范围的崇尚科学与理性这件事情意义重大，思考质量的提升导致人类产出大量的思想与技术成果，这是人类作为一个整体所进行的一次最大的头脑操作系统升级！用计算机的术语来讲，这是一次数据分析算法的巨大优化，为后面的科技革命与现代化奠定了坚实的理论与思想基础。</p>
-<p>迄今为止，人类的最后一个重大节点便是以牛顿、爱因斯坦等人为代言人的科技革命，从第一次工业革命至今天都属于这个范畴。这一时期科学技术迅猛发展，铁路、飞机、动力轮船的发明以及工业化机械大生产带来的分工协作极大的提高了人与人之间的交流，地域的障碍对人的限制越来越小，电信技术的发明也大大的便利了人与人之间信息的传播，互联网的发展更是让人类最大量的数据从纸上迁移到了网上，数据存储媒介与传播媒介的升级带来传播效率的指数型上升，从而带来了社会的大发展，乃至于在这个生活的方方面面都在数据化的“大数据”的今天，积累的数据本身就成为了最大的生产力。</p>
-<p>人类社会的进化发展史，就是一部人类自身经验、知识数据的存储史。</p>
+        <p>在程序开发的过程中，DRP即“don’t repeat yourself”是一个基本的编码原则，在需要多处重复使用一段代码的情况下，“复制粘贴”是一个糟糕的选择，一方面代码繁杂冗余，另一方面，这种冗余的代码的维护便是一个大问题（改动需要一处处的找出来改，既费时又很容易产生新的错误），而在软件开发中需求频繁变动是常态，因而代码的复用显得至关重要。在java中代码的复用方式有两种：一种是将重复使用的代码剥离为一个新的方法，但原来的各处仍需调用该方法，在一段代码需要普遍使用的情况下依然会显得冗余；另外一种就是利用Aop机制，将普遍使用的代码放到advice中进行横向拦截处理，彻底<strong>将重复的代码从原来分散的各处完全剥离到一处，从而达到非常简洁的复用效果</strong>。在此简要介绍一下spring的aop处理机制及用法。</p>
+<h3 id="一、Aop简介与基本处理机制"><a href="#一、Aop简介与基本处理机制" class="headerlink" title="一、Aop简介与基本处理机制"></a>一、Aop简介与基本处理机制</h3><p>AOP为OOP的一个有益补充，在全局性的处理逻辑（如：安全校验、事务管理、缓存、对象池管理）中有广泛的应用，Aop与java的反射机制是构建应用通用性基础设施的绝佳工具。<br>aop的底层实现为aop代理，代理分为静态代理（AspectJ）和动态代理，前者在编译时将aop的拦截处理代码拼接到目标类从而生成一个新的代理类，后者在运行时临时动态拼接生成代理类，因而前者一般比后者在性能上更高效。Spring 的aop framework使用的是动态代理的机制，在程序运行时利用CGLIB（Code Generate Library）动态生成代理类。</p>
+<h3 id="二、Aop的几个基本术语"><a href="#二、Aop的几个基本术语" class="headerlink" title="二、Aop的几个基本术语"></a>二、Aop的几个基本术语</h3><blockquote>
+<ul>
+<li><strong>Join point</strong>：程序中的一个精确执行点，aop拦截介入的基本单元，在spring aop中一个Join point就是一个拦截的方法</li>
+<li><strong>Point cut</strong>：拦截的Join point的一个集合，可以用表达式匹配一系列的Join point</li>
+<li><strong>Advice</strong>: 拦截后的具体处理代码</li>
+<li><strong>Aspect</strong>：point cut和advice结合起来就是aspect，它类似于OOP中定义的一个类，但它代表的更多是对象间横向的关系</li>
+</ul>
+</blockquote>
+<h3 id="三、point-cut的几种常用配置表达式类型"><a href="#三、point-cut的几种常用配置表达式类型" class="headerlink" title="三、point cut的几种常用配置表达式类型"></a>三、point cut的几种常用配置表达式类型</h3><p>在表达式中除个别标识符外，“*”通配符代表“任意与不作限制”的意思，可以作为部分或全部的名称模式，(..)代表匹配方法可以又任意个的参数，(*)代表匹配的方法只能有一个参数，但参数的类型不作限制，（）代表匹配的方法没有参数， (*,String)代表匹配的方法有两个参数，第二个参数的类型必须为字符串类型</p>
+<blockquote>
+<ul>
+<li><strong>execution</strong>：用来匹配指定模式的方法，spring aop的首选表达式pointcut类型。其表达式格式如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">execution(modifiers-pattern? ret-type-pattern declaring-type-pattern?    name-pattern(param-pattern) throws-pattern?)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p>如：<code>execution(* com.xyz.service..*.*(..))</code>匹配的是com.xyz.service目录下的或其任意子目录下的所有方法（返回值不限定）</p>
+<ul>
+<li><strong>within</strong>：匹配拦截指定类中的方法<br>如：within(com.xyz.service..*)匹配的也是com.xyz.service目录下的或其任意子目录下的所有方法</li>
+<li><strong>target</strong>：匹配指定类型的目标对象（不包括引入接口）方法，表达式必须是完整类名，不支持通配符</li>
+<li><strong>args</strong>：匹配参数列表为指定类型的方法</li>
+<li><strong>@args</strong>：用于匹配传入的参数类型有指定注解的方法</li>
+<li><strong>@within</strong>：匹配含有指定注解类型的类的所有方法</li>
+<li><strong>@annotation</strong>：匹配含有指定注解的方法</li>
+<li><strong>@target</strong>：匹配执行对象含有指定类型的`注解的所有方法，表达式必须是完整类名，不支持通配符,<br>如：@target(org.springframework.transaction.annotation.Transactional)代表拦截加了注解@Transactional的类下的所有方法</li>
+</ul>
+<h3 id="四、advice的类型"><a href="#四、advice的类型" class="headerlink" title="四、advice的类型"></a>四、advice的类型</h3><blockquote>
+<ul>
+<li><strong>before advice</strong>: 在point cut前执行advice，执行拦截处理时不阻塞原方法的继续执行，相当于异步执行。</li>
+<li><strong>after returning advice</strong>: 正常返回时执行advice。</li>
+<li><strong>after throwing advice</strong>: 抛出异常后执行advice</li>
+<li><strong>after (finally) advice</strong>: 无论匹配的执行方法是否正常执行都执行advice</li>
+<li><strong>around advice</strong>: 匹配方法的执行前后可以全面介入，同步阻塞式执行，是最强大的advice类型。<br>为提高程序的执行效率，使用的原则是：用弱的advice类型可以解决的问题，就不用强大的</li>
+</ul>
+</blockquote>
+<h3 id="五、Spring-Aop的使用步骤"><a href="#五、Spring-Aop的使用步骤" class="headerlink" title="五、Spring Aop的使用步骤"></a>五、Spring Aop的使用步骤</h3><p>（以注解的配置方式为例）</p>
+<blockquote>
+<ol>
+<li>创建Aspect拦截处理类。</li>
+<li>在类中添加@Aspect和@Component注解，以声明该类为aspect类。</li>
+<li>在类中创建一个advice的实际拦截处理方法，添加advice类型注解及其poincut 拦截匹配表达式。<br>如：@Around(value = “within(com.test.controller..*)”)匹配的是com.test.controller目录或子目录下的任意类型的所有方法。</li>
+<li>测试运行，完成</li>
+</ol>
+</blockquote>
 
       
     </div>
@@ -330,17 +368,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/07/不做信息的奴隶/" rel="next" title="不做信息的奴隶">
-                <i class="fa fa-chevron-left"></i> 不做信息的奴隶
+              <a href="/2017/02/04/redis的使用/" rel="next" title="redis的使用">
+                <i class="fa fa-chevron-left"></i> redis的使用
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/21/所谓的“兴趣”只会让你停滞不前/" rel="prev" title="所谓的“兴趣”只会让你停滞不前">
-                所谓的“兴趣”只会让你停滞不前 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -355,10 +389,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/08/15/数据与文明/"
-     data-title="数据与文明"
+        <div class="ds-share flat" data-thread-key="2017/02/17/Spring-Aop处理机制与运用/"
+     data-title="Spring Aop处理机制与运用"
      data-content=""
-     data-url="https://zenghaifei.github.io/2016/08/15/数据与文明/">
+     data-url="https://zenghaifei.github.io/2017/02/17/Spring-Aop处理机制与运用/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -385,8 +419,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/15/数据与文明/"
-           data-title="数据与文明" data-url="https://zenghaifei.github.io/2016/08/15/数据与文明/">
+      <div class="ds-thread" data-thread-key="2017/02/17/Spring-Aop处理机制与运用/"
+           data-title="Spring Aop处理机制与运用" data-url="https://zenghaifei.github.io/2017/02/17/Spring-Aop处理机制与运用/">
       </div>
     
   </div>
@@ -526,7 +560,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、Aop简介与基本处理机制"><span class="nav-number">1.</span> <span class="nav-text">一、Aop简介与基本处理机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Aop的几个基本术语"><span class="nav-number">2.</span> <span class="nav-text">二、Aop的几个基本术语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、point-cut的几种常用配置表达式类型"><span class="nav-number">3.</span> <span class="nav-text">三、point cut的几种常用配置表达式类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、advice的类型"><span class="nav-number">4.</span> <span class="nav-text">四、advice的类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、Spring-Aop的使用步骤"><span class="nav-number">5.</span> <span class="nav-text">五、Spring Aop的使用步骤</span></a></li></ol></div>
             
           </div>
         </section>
