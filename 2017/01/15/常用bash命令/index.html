@@ -114,7 +114,7 @@
 
 根据相对路径（相对当前路径）进入一个目录 cd folderName/subfolderName/
 根据绝对路径进入一个目录 cd">
-<meta property="og:updated_time" content="2017-02-04T03:06:25.000Z">
+<meta property="og:updated_time" content="2017-05-01T08:23:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用bash命令">
 <meta name="twitter:description" content="一、基本知识
@@ -394,6 +394,7 @@
 <h2 id="三、指令与程序操作"><a href="#三、指令与程序操作" class="headerlink" title="三、指令与程序操作"></a>三、指令与程序操作</h2><blockquote>
 <ul>
 <li>以管理员权限执行一个命令 <code>sudo [command]</code> (“sudo”代表“super user do”)</li>
+<li>授予一个用户对某个目录的写权限：<code>sudo chown -R [userName] [directory]</code></li>
 <li>后台执行一条命令 <code>[command] &amp;</code></li>
 <li>后台执行一条命令，并使其在session断开后依然执行  <code>nohup [commandName] &amp;</code><br>“nohup ”代表“no hang up ”, 如：nohup java -jar XXX.jar &amp; 代表在后台一直执行一个jar包<br><strong>注：通常在shell中执行的后台运行程序在session结束后就自动关闭了，如果需要session结束后程序依然在后台执行，则加上”nohup”</strong></li>
 <li>显示前一次（或后一次）执行的命令 ↑（后一次↓）</li>
@@ -460,7 +461,7 @@
 <li><code>env</code>为当前用户列出所有的环境变量</li>
 <li><code>env | grep [variableName]</code> 查看一个指定环境变量的值</li>
 <li>environment variables are variables that can be used across commands and programs and hold information about the environment.<ol>
-<li>The line USER=”Jane Doe” sets the environment variable USER to a name “Jane Doe”. </li>
+<li>The line USER=”Jane Doe” sets the environment variable USER to a name “Jane Doe”.</li>
 <li>The line export makes the variable to be available to all child sessions initiated from the session you are in. This is a way to make the variable persist across programs.</li>
 <li>At the command line, the command echo $USER returns the value of the variable.</li>
 </ol>
