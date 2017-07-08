@@ -98,7 +98,7 @@
 确切的讲，它是用来对字符串进行模式匹配处理的一个语言工具，目前在各个编程语言以及编辑器中均有广泛的支持（不同的处理引擎语法与功能实现上会略有差异）；
 
 对我们程序员而言，你既可以在编辑器中用它来快速的进行文本的查找、替换，也可以在程序中利用它进行简洁高效的字符串校验编辑，熟悉后，你一定会为它所带来的效率上的提升所惊讶的">
-<meta property="og:updated_time" content="2017-07-08T15:34:40.000Z">
+<meta property="og:updated_time" content="2017-07-08T15:51:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="简介在字符串的处理中，正则表达式是绕不开的话题，它就是为字符串的处理而生的。
@@ -345,9 +345,10 @@
 <li>$ 表示一行的结尾</li>
 <li>\b 表示字符串的边界, \b = word boundary = between \w and \W</li>
 <li>\B = non-word boundary = between \w and \w or \W and \W</li>
-<li>(?=a) = followed by a, which can be any regex</li>
-<li>(?!a) = NOT followed by a</li>
-<li>(?&lt;=)</li>
+<li>(?=X) = followed by X，仅当子表达式X在此位置的右边时才匹配</li>
+<li>(?!X) = NOT followed by X，仅当子表达式X不在此位置的右边时才匹配，如：[a-zA-Z]+(?!\d)与后面不跟数字的单词匹配</li>
+<li>(?&lt;=a) = ahead by X,仅当子表达式 X 在 此位置的左侧匹配时才继续匹配，例如，(?&lt;=19)99 与跟在 19 后面的 99 的实例匹配。此构造不会回溯</li>
+<li>(?&lt;!X) = not ahead by X, 仅当子表达式 X 不在此位置的左侧匹配时才继续匹配。例如，(?&lt;!19)99 与不跟在 19 后面的 99 的实例匹配</li>
 </ul>
 </blockquote>
 <h3 id="三、字符组捕获与更改"><a href="#三、字符组捕获与更改" class="headerlink" title="三、字符组捕获与更改"></a>三、字符组捕获与更改</h3><h4 id="1、捕获"><a href="#1、捕获" class="headerlink" title="1、捕获"></a>1、捕获</h4><p>除了匹配字符串是否符合指定的模型之外，我们也希望能提取出字符串中一些有价值的信息以备后续使用，这时正则表达式的字符组捕获功能便非常有用了。基本语法为：分别将匹配串中需要捕获的各个域用括号括起来，需要调用各个捕获域的值时只需用$1、$2、$3…(或\1、\2、\3…)分别对应起括号从左往右的1、2、3…的顺序即可。</p>
